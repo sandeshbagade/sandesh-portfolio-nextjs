@@ -33,48 +33,75 @@ const Projects = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            Some of my notable projects and contributions.
+            Explore some of my recent projects that showcase my technical
+            skills.
           </motion.p>
         </div>
 
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+        <div className='grid gap-8 md:grid-cols-2'>
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className='bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden border border-gray-200 dark:border-gray-700'
+              className='bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md border border-gray-200 dark:border-gray-700 flex flex-col h-full'
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              {/* Project Content */}
-              <div className='p-6'>
-                <h3 className='text-xl font-bold text-gray-900 dark:text-white mb-3'>
-                  {project.title}
-                </h3>
+              <div className='p-6 flex-grow'>
+                <div className='flex justify-between items-center mb-4'>
+                  <h3 className='text-xl font-bold text-gray-900 dark:text-white'>
+                    {project.title}
+                  </h3>
+                  <div className='flex space-x-2'>
+                    {project.links.github && (
+                      <a
+                        href={project.links.github}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className='text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition-colors cursor-pointer'
+                        aria-label={`GitHub repository for ${project.title}`}
+                      >
+                        <FaGithub className='w-5 h-5' />
+                      </a>
+                    )}
+                    {project.links.demo && (
+                      <a
+                        href={project.links.demo}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className='text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition-colors cursor-pointer'
+                        aria-label={`Live demo for ${project.title}`}
+                      >
+                        <FaExternalLinkAlt className='w-5 h-5' />
+                      </a>
+                    )}
+                  </div>
+                </div>
 
-                {/* Enhanced project description with links */}
                 {project.title === 'Open Source Contribution' ? (
                   <p className='text-gray-600 dark:text-gray-300 mb-4'>
-                    Merged a{' '}
-                    <a
-                      href={project.links.prLink}
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      className='text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 hover:underline'
-                    >
-                      Pull Request
-                    </a>{' '}
-                    to improve TypeScript definitions for{' '}
+                    Made an open source contribution to{' '}
                     <a
                       href={project.links.github}
                       target='_blank'
                       rel='noopener noreferrer'
-                      className='text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 hover:underline'
+                      className='text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 hover:underline cursor-pointer'
+                      aria-label='React Sketch GitHub repository'
                     >
                       React Sketch
                     </a>{' '}
-                    npm package.
+                    library with a{' '}
+                    <a
+                      href={project.links.prLink}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 hover:underline cursor-pointer'
+                      aria-label='Pull Request for React Sketch'
+                    >
+                      Pull Request
+                    </a>{' '}
+                    that improved TypeScript definitions and fixed bugs.
                   </p>
                 ) : (
                   <p className='text-gray-600 dark:text-gray-300 mb-4'>
@@ -82,8 +109,7 @@ const Projects = () => {
                   </p>
                 )}
 
-                {/* Tech Stack */}
-                <div className='flex flex-wrap gap-2 mb-4'>
+                <div className='flex flex-wrap gap-2'>
                   {project.technologies.map((tech, techIndex) => (
                     <span
                       key={techIndex}
@@ -93,62 +119,20 @@ const Projects = () => {
                     </span>
                   ))}
                 </div>
-
-                {/* Links */}
-                <div className='flex space-x-4 mt-6'>
-                  {project.links.github && (
-                    <a
-                      href={project.links.github}
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      className='text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-500 flex items-center'
-                      aria-label='GitHub Repository'
-                    >
-                      <FaGithub className='mr-2' />
-                      <span>
-                        {project.title === 'Open Source Contribution'
-                          ? 'Package'
-                          : 'Code'}
-                      </span>
-                    </a>
-                  )}
-                  {project.links.prLink && (
-                    <a
-                      href={project.links.prLink}
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      className='text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-500 flex items-center'
-                      aria-label='Pull Request'
-                    >
-                      <FaCode className='mr-2' />
-                      <span>PR</span>
-                    </a>
-                  )}
-                  {project.links.live && (
-                    <a
-                      href={project.links.live}
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      className='text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-500 flex items-center'
-                      aria-label='Live Site'
-                    >
-                      <FaExternalLinkAlt className='mr-2' />
-                      <span>Live</span>
-                    </a>
-                  )}
-                  {project.links.demo && (
-                    <a
-                      href={project.links.demo}
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      className='text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-500 flex items-center'
-                      aria-label='Demo'
-                    >
-                      <FaYoutube className='mr-2' />
-                      <span>Demo</span>
-                    </a>
-                  )}
-                </div>
+              </div>
+              <div className='px-6 py-4 bg-gray-50 dark:bg-gray-700/40 border-t border-gray-200 dark:border-gray-700'>
+                <a
+                  href={project.links.github}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='flex items-center text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 font-medium cursor-pointer'
+                  aria-label={`View ${project.title} code on GitHub`}
+                >
+                  <FaCode className='mr-2' />
+                  {project.title === 'Open Source Contribution'
+                    ? 'View Package'
+                    : 'View Code'}
+                </a>
               </div>
             </motion.div>
           ))}

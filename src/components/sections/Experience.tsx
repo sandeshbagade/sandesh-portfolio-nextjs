@@ -66,7 +66,8 @@ const Experience = () => {
                       href={job.companyUrl}
                       target='_blank'
                       rel='noopener noreferrer'
-                      className='text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 hover:underline'
+                      className='text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 hover:underline cursor-pointer'
+                      aria-label={`${job.company} website`}
                     >
                       {job.company}
                     </a>
@@ -96,7 +97,8 @@ const Experience = () => {
                               href={job.appLinks.mobile}
                               target='_blank'
                               rel='noopener noreferrer'
-                              className='text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 hover:underline'
+                              className='text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 hover:underline cursor-pointer'
+                              aria-label='OPA Marketing mobile app'
                             >
                               mobile app
                             </a>{' '}
@@ -111,7 +113,8 @@ const Experience = () => {
                               href={job.appLinks.marketing}
                               target='_blank'
                               rel='noopener noreferrer'
-                              className='text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 hover:underline'
+                              className='text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 hover:underline cursor-pointer'
+                              aria-label='OPA Marketing branding app'
                             >
                               marketing app
                             </a>{' '}
@@ -126,7 +129,8 @@ const Experience = () => {
                               href={job.appLinks.client}
                               target='_blank'
                               rel='noopener noreferrer'
-                              className='text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 hover:underline'
+                              className='text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 hover:underline cursor-pointer'
+                              aria-label='OPA client app for performance tracking'
                             >
                               client app
                             </a>{' '}
