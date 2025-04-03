@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { HiArrowNarrowRight } from 'react-icons/hi';
 
 const Hero = () => {
@@ -42,7 +43,7 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* Profile Image Placeholder */}
+          {/* Profile Image */}
           <motion.div
             className='w-full md:w-2/5'
             initial={{ opacity: 0, scale: 0.8 }}
@@ -50,8 +51,26 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <div className='relative w-64 h-64 mx-auto md:w-80 md:h-80 rounded-full bg-blue-100 dark:bg-blue-900/20 flex items-center justify-center overflow-hidden border-4 border-white dark:border-gray-800 shadow-xl'>
-              {/* Actual image would go here, using a placeholder color for now */}
-              <div className='text-blue-600 text-6xl font-bold'>SB</div>
+              {/* Profile image with fallback to initials */}
+              <Image
+                src='/images/profile.jpg'
+                alt='Sandesh Bagade'
+                fill
+                sizes='(max-width: 768px) 256px, 320px'
+                className='object-cover'
+                priority
+                onError={(e) => {
+                  // If image fails to load, show initials instead
+                  e.currentTarget.style.display = 'none';
+                  const parent = e.currentTarget.parentElement;
+                  if (parent) {
+                    const fallback = document.createElement('div');
+                    fallback.className = 'text-blue-600 text-6xl font-bold';
+                    fallback.innerText = 'SB';
+                    parent.appendChild(fallback);
+                  }
+                }}
+              />
             </div>
           </motion.div>
         </div>

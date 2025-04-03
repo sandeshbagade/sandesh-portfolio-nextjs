@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Save Profile Image</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.6;
+      }
+      .instructions {
+        background-color: #f8f9fa;
+        padding: 15px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+      }
+      .profile-image {
+        max-width: 300px;
+        border-radius: 50%;
+        display: block;
+        margin: 20px auto;
+        border: 4px solid #fff;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+      button {
+        background-color: #3b82f6;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin: 10px auto;
+        display: block;
+      }
+      button:hover {
+        background-color: #2563eb;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Save Your Profile Image</h1>
+
+    <div class="instructions">
+      <h2>Instructions:</h2>
+      <ol>
+        <li>Right-click on the image below and select "Save Image As"</li>
+        <li>
+          Navigate to the <code>public/images</code> folder in your project
+        </li>
+        <li>Save the image as <code>profile.jpg</code></li>
+        <li>The image will now be used in your portfolio!</li>
+      </ol>
+    </div>
+
+    <img
+      src="YOUR_IMAGE_URL_HERE"
+      alt="Profile Image"
+      class="profile-image"
+      id="profileImage"
+    />
+
+    <script>
+      // You can add the base64 image data here if needed
+      // document.getElementById('profileImage').src = 'data:image/jpeg;base64,YOUR_BASE64_DATA_HERE';
+    </script>
+  </body>
+</html>
