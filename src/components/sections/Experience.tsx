@@ -2,7 +2,12 @@
 
 import { motion } from 'framer-motion';
 import { experience } from '@/lib/data';
-import { HiBriefcase, HiCalendar, HiLocationMarker } from 'react-icons/hi';
+import {
+  HiBriefcase,
+  HiCalendar,
+  HiLocationMarker,
+  HiLink,
+} from 'react-icons/hi';
 
 const Experience = () => {
   return (
@@ -56,7 +61,15 @@ const Experience = () => {
               <div className='bg-white dark:bg-gray-800 p-5 md:p-6 rounded-lg shadow-md border border-gray-200 dark:border-gray-700 ml-4 md:ml-0 md:mr-4 w-full md:w-[calc(50%-2.5rem)]'>
                 <div className='flex flex-col md:flex-row justify-between mb-2'>
                   <h3 className='text-xl font-bold text-gray-900 dark:text-white'>
-                    {job.title} @ {job.company}
+                    {job.title} @{' '}
+                    <a
+                      href={job.companyUrl}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 hover:underline'
+                    >
+                      {job.company}
+                    </a>
                   </h3>
                 </div>
 
@@ -72,11 +85,62 @@ const Experience = () => {
                 </div>
 
                 <ul className='list-disc list-inside space-y-2 mb-4 text-gray-600 dark:text-gray-300'>
-                  {job.description.map((item, itemIndex) => (
-                    <li key={itemIndex} className='pl-2'>
-                      {item}
-                    </li>
-                  ))}
+                  {job.description.map((item, itemIndex) => {
+                    // For OPA Marketing job, add specific links for mobile, marketing, and client apps
+                    if (job.company === 'OPA Marketing' && job.appLinks) {
+                      if (item.includes('mobile app')) {
+                        return (
+                          <li key={itemIndex} className='pl-2'>
+                            Built{' '}
+                            <a
+                              href={job.appLinks.mobile}
+                              target='_blank'
+                              rel='noopener noreferrer'
+                              className='text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 hover:underline'
+                            >
+                              mobile app
+                            </a>{' '}
+                            with 4.5-star rating and 500k+ downloads.
+                          </li>
+                        );
+                      } else if (item.includes('marketing app')) {
+                        return (
+                          <li key={itemIndex} className='pl-2'>
+                            Created{' '}
+                            <a
+                              href={job.appLinks.marketing}
+                              target='_blank'
+                              rel='noopener noreferrer'
+                              className='text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 hover:underline'
+                            >
+                              marketing app
+                            </a>{' '}
+                            for branding and lead generation.
+                          </li>
+                        );
+                      } else if (item.includes('client app')) {
+                        return (
+                          <li key={itemIndex} className='pl-2'>
+                            Built{' '}
+                            <a
+                              href={job.appLinks.client}
+                              target='_blank'
+                              rel='noopener noreferrer'
+                              className='text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 hover:underline'
+                            >
+                              client app
+                            </a>{' '}
+                            for performance tracking.
+                          </li>
+                        );
+                      }
+                    }
+                    return (
+                      <li key={itemIndex} className='pl-2'>
+                        {item}
+                      </li>
+                    );
+                  })}
                 </ul>
 
                 <div className='flex flex-wrap gap-2 mt-4'>

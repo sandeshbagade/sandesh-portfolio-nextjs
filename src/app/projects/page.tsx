@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { projects } from '@/lib/data';
-import { FaGithub, FaExternalLinkAlt, FaYoutube } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaYoutube, FaCode } from 'react-icons/fa';
 
 export const metadata: Metadata = {
   title: 'Projects - Sandesh Bagade',
@@ -33,9 +33,35 @@ export default function ProjectsPage() {
                   <h2 className='text-2xl font-bold text-gray-900 dark:text-white mb-4'>
                     {project.title}
                   </h2>
-                  <p className='text-gray-700 dark:text-gray-300 mb-6'>
-                    {project.description}
-                  </p>
+
+                  {/* Enhanced project description with links */}
+                  {project.title === 'Open Source Contribution' ? (
+                    <p className='text-gray-700 dark:text-gray-300 mb-6'>
+                      Merged a{' '}
+                      <a
+                        href={project.links.prLink}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className='text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 hover:underline'
+                      >
+                        Pull Request
+                      </a>{' '}
+                      to improve TypeScript definitions for{' '}
+                      <a
+                        href={project.links.github}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className='text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 hover:underline'
+                      >
+                        React Sketch
+                      </a>{' '}
+                      npm package.
+                    </p>
+                  ) : (
+                    <p className='text-gray-700 dark:text-gray-300 mb-6'>
+                      {project.description}
+                    </p>
+                  )}
 
                   {/* Tech Stack */}
                   <div className='mb-6'>
@@ -64,7 +90,22 @@ export default function ProjectsPage() {
                         className='flex items-center gap-2 text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-500 transition-colors'
                       >
                         <FaGithub className='w-5 h-5' />
-                        <span>GitHub Repository</span>
+                        <span>
+                          {project.title === 'Open Source Contribution'
+                            ? 'Package Repository'
+                            : 'GitHub Repository'}
+                        </span>
+                      </a>
+                    )}
+                    {project.links.prLink && (
+                      <a
+                        href={project.links.prLink}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className='flex items-center gap-2 text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-500 transition-colors'
+                      >
+                        <FaCode className='w-5 h-5' />
+                        <span>Pull Request</span>
                       </a>
                     )}
                     {project.links.live && (

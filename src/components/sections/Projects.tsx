@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { projects } from '@/lib/data';
-import { FaGithub, FaExternalLinkAlt, FaYoutube } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaYoutube, FaCode } from 'react-icons/fa';
 
 const Projects = () => {
   return (
@@ -52,9 +52,35 @@ const Projects = () => {
                 <h3 className='text-xl font-bold text-gray-900 dark:text-white mb-3'>
                   {project.title}
                 </h3>
-                <p className='text-gray-600 dark:text-gray-300 mb-4'>
-                  {project.description}
-                </p>
+
+                {/* Enhanced project description with links */}
+                {project.title === 'Open Source Contribution' ? (
+                  <p className='text-gray-600 dark:text-gray-300 mb-4'>
+                    Merged a{' '}
+                    <a
+                      href={project.links.prLink}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 hover:underline'
+                    >
+                      Pull Request
+                    </a>{' '}
+                    to improve TypeScript definitions for{' '}
+                    <a
+                      href={project.links.github}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 hover:underline'
+                    >
+                      React Sketch
+                    </a>{' '}
+                    npm package.
+                  </p>
+                ) : (
+                  <p className='text-gray-600 dark:text-gray-300 mb-4'>
+                    {project.description}
+                  </p>
+                )}
 
                 {/* Tech Stack */}
                 <div className='flex flex-wrap gap-2 mb-4'>
@@ -79,7 +105,23 @@ const Projects = () => {
                       aria-label='GitHub Repository'
                     >
                       <FaGithub className='mr-2' />
-                      <span>Code</span>
+                      <span>
+                        {project.title === 'Open Source Contribution'
+                          ? 'Package'
+                          : 'Code'}
+                      </span>
+                    </a>
+                  )}
+                  {project.links.prLink && (
+                    <a
+                      href={project.links.prLink}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-500 flex items-center'
+                      aria-label='Pull Request'
+                    >
+                      <FaCode className='mr-2' />
+                      <span>PR</span>
                     </a>
                   )}
                   {project.links.live && (

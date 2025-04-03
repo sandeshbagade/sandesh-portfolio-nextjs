@@ -45,7 +45,15 @@ export default function AboutPage() {
                     {edu.degree}
                   </h3>
                   <p className='text-gray-700 dark:text-gray-300'>
-                    {edu.institution} | {edu.period}
+                    <a
+                      href={edu.institutionUrl}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 hover:underline'
+                    >
+                      {edu.institution}
+                    </a>{' '}
+                    | {edu.period}
                   </p>
                   <p className='text-gray-600 dark:text-gray-400'>
                     {edu.details}
