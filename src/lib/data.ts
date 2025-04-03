@@ -82,7 +82,7 @@ export const education = [
   },
 ];
 
-export const projects = [
+export const projects: any = [
   {
     title: 'Open Source Contribution',
     description:
