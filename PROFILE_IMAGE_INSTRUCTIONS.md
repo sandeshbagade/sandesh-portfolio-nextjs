@@ -2,11 +2,11 @@
 
 ## Current Implementation
 
-We've updated the Hero component to use your local profile image file `user_profile.jpeg` placed in the images subdirectory of the public folder. The image is now displayed in the circular container, replacing the "SB" text placeholder.
+We've updated the Hero component to use your local profile image file `user_profile.png` placed in the images subdirectory of the public folder. The image is now displayed in the circular container, replacing the "SB" text placeholder.
 
 ```jsx
 <Image
-  src='/images/user_profile.jpeg'
+  src='/images/user_profile.png'
   alt='Sandesh Bagade'
   fill
   sizes='(max-width: 768px) 256px, 320px'
@@ -22,7 +22,7 @@ This implementation uses your image file directly from the project's public dire
 The image should be located at:
 
 ```
-public/images/user_profile.jpeg
+public/images/user_profile.png
 ```
 
 Make sure the file exists at this location and has the correct permissions.
@@ -69,7 +69,7 @@ If you want to host the image externally:
 
 If your image doesn't appear:
 
-- Make sure the file exists at `public/images/user_profile.jpeg`
+- Make sure the file exists at `public/images/user_profile.png`
 - Check that the filename and extension are exactly as specified (case sensitive)
 - Check the browser console for any errors
 - The Hero component includes a fallback to show your initials "SB" if the image fails to load

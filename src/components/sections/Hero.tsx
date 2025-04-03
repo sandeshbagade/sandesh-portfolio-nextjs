@@ -53,12 +53,13 @@ const Hero = () => {
             <div className='relative w-64 h-64 mx-auto md:w-80 md:h-80 rounded-full bg-blue-100 dark:bg-blue-900/20 flex items-center justify-center overflow-hidden border-4 border-white dark:border-gray-800 shadow-xl'>
               {/* Profile image with fallback to initials */}
               <Image
-                src='/images/user_profile.jpeg'
+                src='/images/user_profile.png'
                 alt='Sandesh Bagade'
                 fill
                 sizes='(max-width: 768px) 256px, 320px'
                 className='object-cover'
                 priority
+                unoptimized={true}
                 onError={(e) => {
                   // If image fails to load, show initials instead
                   e.currentTarget.style.display = 'none';
