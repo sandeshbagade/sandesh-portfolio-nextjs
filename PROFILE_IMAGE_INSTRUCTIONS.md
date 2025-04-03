@@ -2,11 +2,11 @@
 
 ## Current Implementation
 
-We've updated the Hero component to use your local profile image file `user_profile.jpeg` placed in the public directory. The image is now displayed in the circular container, replacing the "SB" text placeholder.
+We've updated the Hero component to use your local profile image file `user_profile.jpeg` placed in the images subdirectory of the public folder. The image is now displayed in the circular container, replacing the "SB" text placeholder.
 
 ```jsx
 <Image
-  src='/user_profile.jpeg'
+  src='/images/user_profile.jpeg'
   alt='Sandesh Bagade'
   fill
   sizes='(max-width: 768px) 256px, 320px'
@@ -15,14 +15,14 @@ We've updated the Hero component to use your local profile image file `user_prof
 />
 ```
 
-This implementation uses your image file directly from the project's public directory.
+This implementation uses your image file directly from the project's public directory structure.
 
 ## Image File Location
 
 The image should be located at:
 
 ```
-public/user_profile.jpeg
+public/images/user_profile.jpeg
 ```
 
 Make sure the file exists at this location and has the correct permissions.
@@ -33,12 +33,12 @@ If you want to use a different image or a different approach, you can use one of
 
 ### Method 1: Using a Different Local Image
 
-1. Place your preferred image in the `public` directory
+1. Place your preferred image in the `public/images` directory
 2. Update the Hero component to use this image:
 
    ```jsx
    <Image
-     src='/your-image-name.jpg'
+     src='/images/your-image-name.jpg'
      alt='Sandesh Bagade'
      fill
      sizes='(max-width: 768px) 256px, 320px'
@@ -69,7 +69,7 @@ If you want to host the image externally:
 
 If your image doesn't appear:
 
-- Make sure the file exists at `public/user_profile.jpeg`
+- Make sure the file exists at `public/images/user_profile.jpeg`
 - Check that the filename and extension are exactly as specified (case sensitive)
 - Check the browser console for any errors
 - The Hero component includes a fallback to show your initials "SB" if the image fails to load
