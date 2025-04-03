@@ -75,15 +75,15 @@ export default function AboutPage() {
             <div className='space-y-4 text-gray-600 dark:text-gray-300'>
               <p>
                 As a passionate software engineer with over 5 years of
-                professional experience, I've cultivated a deep expertise in
-                building modern web and mobile applications. My journey in
+                professional experience, I&apos;ve cultivated a deep expertise
+                in building modern web and mobile applications. My journey in
                 software development began during my undergraduate studies in
                 Computer Science at NIT Trichy, where I discovered my passion
                 for creating elegant solutions to complex problems.
               </p>
               <p>
-                Throughout my career, I've had the opportunity to work with a
-                diverse range of technologies and frameworks, from React and
+                Throughout my career, I&apos;ve had the opportunity to work with
+                a diverse range of technologies and frameworks, from React and
                 Node.js to Flutter and AWS. I take pride in writing clean,
                 efficient code and staying at the forefront of industry trends
                 and best practices. My experience spans from startups to
@@ -92,10 +92,10 @@ export default function AboutPage() {
               </p>
               <p>
                 What drives me is the desire to create technology that makes a
-                positive impact on people's lives. Whether it's improving user
-                experiences, optimizing performance, or solving critical
-                business challenges, I approach each project with dedication and
-                a commitment to excellence.
+                positive impact on people&apos;s lives. Whether it&apos;s
+                improving user experiences, optimizing performance, or solving
+                critical business challenges, I approach each project with
+                dedication and a commitment to excellence.
               </p>
             </div>
           </div>
@@ -106,13 +106,13 @@ export default function AboutPage() {
             </h2>
             <div className='space-y-4 text-gray-600 dark:text-gray-300'>
               <p>
-                When I'm not coding, I enjoy hiking in the mountains, exploring
-                new hiking trails, and photography. I'm also an avid reader of
-                science fiction and technical books, always looking to expand my
-                horizons and learn new things.
+                When I&apos;m not coding, I enjoy hiking in the mountains,
+                exploring new hiking trails, and photography. I&apos;m also an
+                avid reader of science fiction and technical books, always
+                looking to expand my horizons and learn new things.
               </p>
               <p>
-                I'm passionate about continuous learning and regularly
+                I&apos;m passionate about continuous learning and regularly
                 participate in hackathons, contribute to open-source projects,
                 and attend tech meetups to stay connected with the developer
                 community.
