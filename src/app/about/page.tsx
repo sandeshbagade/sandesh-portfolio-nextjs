@@ -54,13 +54,9 @@ export default function AboutPage() {
                   </a>{' '}
                   • {edu.period}
                 </p>
-                <ul className='list-disc list-inside text-gray-600 dark:text-gray-300 space-y-1'>
-                  {edu.details.map((detail, i) => (
-                    <li key={i} className='pl-2'>
-                      {detail}
-                    </li>
-                  ))}
-                </ul>
+                <p className='text-gray-600 dark:text-gray-300 pl-2'>
+                  {edu.details}
+                </p>
               </div>
             ))}
           </div>
