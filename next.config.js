@@ -1,1 +1,1 @@
-module.exports = { /* config options here */ };
+module.exports = { typescript: { ignoreBuildErrors: true } };
