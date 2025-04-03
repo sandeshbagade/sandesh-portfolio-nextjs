@@ -53,7 +53,7 @@ const Hero = () => {
             <div className='relative w-64 h-64 mx-auto md:w-80 md:h-80 rounded-full bg-blue-100 dark:bg-blue-900/20 flex items-center justify-center overflow-hidden border-4 border-white dark:border-gray-800 shadow-xl'>
               {/* Profile image with fallback to initials */}
               <Image
-                src='/images/profile.jpg'
+                src='/user_profile.jpeg'
                 alt='Sandesh Bagade'
                 fill
                 sizes='(max-width: 768px) 256px, 320px'

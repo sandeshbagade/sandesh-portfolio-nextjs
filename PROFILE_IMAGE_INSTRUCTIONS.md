@@ -1,37 +1,62 @@
 # Adding Your Profile Image to the Portfolio
 
-To add your profile image to your portfolio website, follow these steps:
+## Current Implementation
 
-## Method 1: Direct File Upload (Recommended)
+We've updated the Hero component to use your local profile image file `user_profile.jpeg` placed in the public directory. The image is now displayed in the circular container, replacing the "SB" text placeholder.
 
-1. Create a folder named `images` inside the `public` directory of your project:
+```jsx
+<Image
+  src='/user_profile.jpeg'
+  alt='Sandesh Bagade'
+  fill
+  sizes='(max-width: 768px) 256px, 320px'
+  className='object-cover'
+  priority
+/>
+```
 
-   ```bash
-   mkdir -p public/images
-   ```
+This implementation uses your image file directly from the project's public directory.
 
-2. Save your profile image as `profile.jpg` in the `public/images` folder.
+## Image File Location
 
-3. If your image is not already in this directory, you can copy it there from your downloads or other location:
+The image should be located at:
 
-   ```bash
-   cp /path/to/your/image.jpg public/images/profile.jpg
-   ```
+```
+public/user_profile.jpeg
+```
 
-4. The Hero component has already been updated to use this image. If you push these changes, the image will appear on your website.
+Make sure the file exists at this location and has the correct permissions.
 
-## Method 2: Using GitHub and Vercel (If method 1 doesn't work)
+## Alternative Methods
 
-1. Fork a temporary GitHub repository to host your image
-2. Upload your image to this repository
-3. Use a service like Statically.io to serve your image:
-   ```
-   https://cdn.statically.io/gh/YOUR_USERNAME/YOUR_REPO/main/YOUR_IMAGE.jpg
-   ```
-4. Edit the Hero.tsx file to use this URL:
+If you want to use a different image or a different approach, you can use one of the following methods:
+
+### Method 1: Using a Different Local Image
+
+1. Place your preferred image in the `public` directory
+2. Update the Hero component to use this image:
+
    ```jsx
    <Image
-     src='https://cdn.statically.io/gh/YOUR_USERNAME/YOUR_REPO/main/YOUR_IMAGE.jpg'
+     src='/your-image-name.jpg'
+     alt='Sandesh Bagade'
+     fill
+     sizes='(max-width: 768px) 256px, 320px'
+     className='object-cover'
+     priority
+   />
+   ```
+
+### Method 2: Using an Image from GitHub or Another Hosting Service
+
+If you want to host the image externally:
+
+1. Upload your image to GitHub or another image hosting service
+2. Get the direct URL for the image
+3. Update the Hero component to use this URL:
+   ```jsx
+   <Image
+     src='YOUR_IMAGE_URL'
      alt='Sandesh Bagade'
      fill
      sizes='(max-width: 768px) 256px, 320px'
@@ -44,8 +69,8 @@ To add your profile image to your portfolio website, follow these steps:
 
 If your image doesn't appear:
 
-- Make sure it's named exactly `profile.jpg`
-- Make sure it's located at `public/images/profile.jpg`
+- Make sure the file exists at `public/user_profile.jpeg`
+- Check that the filename and extension are exactly as specified (case sensitive)
 - Check the browser console for any errors
 - The Hero component includes a fallback to show your initials "SB" if the image fails to load
 
@@ -57,4 +82,4 @@ For best results:
 - Optimize your image for web (reduce file size to under 500KB if possible)
 - The image will be displayed in a circular container with dimensions of 320x320px on desktop and 256x256px on mobile
 
-Your portfolio will now display your professional photo instead of the initials placeholder!
+Your portfolio now displays your professional photo instead of the initials placeholder!
