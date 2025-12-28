@@ -11,11 +11,11 @@ import {
 
 const Experience = () => {
   return (
-    <section className='py-20 bg-gray-50 dark:bg-gray-900/50'>
+    <section className='py-12 md:py-16 lg:py-20 bg-gray-50 dark:bg-gray-900/50'>
       <div className='container mx-auto px-4 md:px-6'>
-        <div className='mb-12 text-center'>
+        <div className='mb-8 md:mb-12 text-center'>
           <motion.h2
-            className='text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4'
+            className='text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3 md:mb-4'
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -31,18 +31,17 @@ const Experience = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           />
           <motion.p
-            className='text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg'
+            className='text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-base sm:text-lg'
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            My professional journey as a software engineer across different
-            companies.
+            My professional journey working with clients and companies from around the globe - US, Canada, Singapore, and India.
           </motion.p>
         </div>
 
-        <div className='space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gray-200 dark:before:bg-gray-800'>
+        <div className='space-y-8 md:space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gray-200 dark:before:bg-gray-800'>
           {experience.map((job, index) => (
             <motion.div
               key={index}
@@ -58,9 +57,9 @@ const Experience = () => {
               </div>
 
               {/* Content Card */}
-              <div className='bg-white dark:bg-gray-800 p-5 md:p-6 rounded-lg shadow-md border border-gray-200 dark:border-gray-700 ml-4 md:ml-0 md:mr-4 w-full md:w-[calc(50%-2.5rem)]'>
+              <div className='bg-white dark:bg-gray-800 p-4 sm:p-5 md:p-6 rounded-lg shadow-md border border-gray-200 dark:border-gray-700 ml-4 md:ml-0 md:mr-4 w-full md:w-[calc(50%-2.5rem)]'>
                 <div className='flex flex-col md:flex-row justify-between mb-2'>
-                  <h3 className='text-xl font-bold text-gray-900 dark:text-white'>
+                  <h3 className='text-lg sm:text-xl font-bold text-gray-900 dark:text-white'>
                     {job.title} @{' '}
                     <a
                       href={job.companyUrl}
@@ -85,7 +84,7 @@ const Experience = () => {
                   </div>
                 </div>
 
-                <ul className='list-disc list-inside space-y-2 mb-4 text-gray-600 dark:text-gray-300'>
+                <ul className='list-disc list-inside space-y-2 mb-4 text-sm sm:text-base text-gray-600 dark:text-gray-300'>
                   {job.description.map((item, itemIndex) => {
                     // For OPA Marketing job, add specific links for mobile, marketing, and client apps
                     if (job.company === 'OPA Marketing' && job.appLinks) {

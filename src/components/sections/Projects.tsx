@@ -7,11 +7,11 @@ import { FaGithub, FaExternalLinkAlt, FaYoutube, FaCode } from 'react-icons/fa';
 
 const Projects = () => {
   return (
-    <section className='py-20'>
+    <section className='py-12 md:py-16 lg:py-20'>
       <div className='container mx-auto px-4 md:px-6'>
-        <div className='mb-12 text-center'>
+        <div className='mb-8 md:mb-12 text-center'>
           <motion.h2
-            className='text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4'
+            className='text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3 md:mb-4'
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -27,7 +27,7 @@ const Projects = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           />
           <motion.p
-            className='text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg'
+            className='text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-base sm:text-lg'
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -38,7 +38,7 @@ const Projects = () => {
           </motion.p>
         </div>
 
-        <div className='grid gap-8 md:grid-cols-2'>
+        <div className='grid gap-5 md:gap-8 md:grid-cols-2'>
           {projects.map((project, index) => (
             <motion.div
               key={index}

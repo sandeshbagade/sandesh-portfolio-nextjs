@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { HiMenu, HiX } from 'react-icons/hi';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import { personalInfo } from '@/lib/data';
 import { ThemeToggle } from './ThemeToggle';
 
@@ -75,6 +75,15 @@ const Navbar = () => {
         {/* Social Links - Desktop */}
         <div className='hidden md:flex items-center space-x-4'>
           <a
+            href={personalInfo.links.instagram}
+            target='_blank'
+            rel='noopener noreferrer'
+            className='text-gray-600 hover:text-pink-600 dark:text-gray-300 dark:hover:text-pink-500 transition-colors'
+            aria-label='Instagram'
+          >
+            <FaInstagram className='h-5 w-5' />
+          </a>
+          <a
             href={personalInfo.links.github}
             target='_blank'
             rel='noopener noreferrer'
@@ -91,15 +100,6 @@ const Navbar = () => {
             aria-label='LinkedIn'
           >
             <FaLinkedin className='h-5 w-5' />
-          </a>
-          <a
-            href={personalInfo.links.twitter}
-            target='_blank'
-            rel='noopener noreferrer'
-            className='text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-500 transition-colors'
-            aria-label='Twitter'
-          >
-            <FaTwitter className='h-5 w-5' />
           </a>
           <ThemeToggle />
         </div>
@@ -147,6 +147,15 @@ const Navbar = () => {
               {/* Social Links - Mobile */}
               <div className='flex space-x-6 mt-4 pt-4 border-t border-gray-200 dark:border-gray-700'>
                 <a
+                  href={personalInfo.links.instagram}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='text-gray-600 hover:text-pink-600 dark:text-gray-300 dark:hover:text-pink-500 transition-colors'
+                  aria-label='Instagram'
+                >
+                  <FaInstagram className='h-5 w-5' />
+                </a>
+                <a
                   href={personalInfo.links.github}
                   target='_blank'
                   rel='noopener noreferrer'
@@ -163,15 +172,6 @@ const Navbar = () => {
                   aria-label='LinkedIn'
                 >
                   <FaLinkedin className='h-5 w-5' />
-                </a>
-                <a
-                  href={personalInfo.links.twitter}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-500 transition-colors'
-                  aria-label='Twitter'
-                >
-                  <FaTwitter className='h-5 w-5' />
                 </a>
                 <ThemeToggle />
               </div>

@@ -8,20 +8,33 @@ import { ThemeProvider } from '@/components/layout/ThemeProvider';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Sandesh Bagade | Software Engineer',
+  metadataBase: new URL('https://sandeshbagade.com'),
+  title: 'Sandesh Bagade | Full Stack Developer & Creative Soul',
   description:
-    'Portfolio website of Sandesh Bagade, a Software Engineer specializing in front-end development with React and Next.js',
+    'Welcome to my personal space! I\'m Sandesh Bagade, a Freelance Full Stack Web Developer working with clients from US, Canada, and Singapore. Passionate about building amazing web experiences, playing pickleball, making music with my flute, and capturing life through photography.',
   keywords: [
     'Sandesh Bagade',
-    'Software Engineer',
+    'Full Stack Developer',
+    'Freelance Web Developer',
     'React Developer',
     'Next.js Developer',
-    'Frontend Engineer',
-    'Portfolio',
-    'Resume',
+    'JavaScript Developer',
+    'Python Developer',
+    'NodeJS Developer',
+    'Pickleball',
+    'Flute Player',
+    'Photography',
+    'Mumbai',
+    'India',
   ],
   authors: [{ name: 'Sandesh Bagade' }],
   creator: 'Sandesh Bagade',
+  openGraph: {
+    title: 'Sandesh Bagade | Full Stack Developer & Creative Soul',
+    description:
+      'Freelance Full Stack Web Developer | Pickleball Enthusiast | Flute Player | Photography Lover',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({

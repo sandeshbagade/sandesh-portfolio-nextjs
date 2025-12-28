@@ -5,7 +5,7 @@ import { FaGithub, FaExternalLinkAlt, FaYoutube, FaCode } from 'react-icons/fa';
 export const metadata: Metadata = {
   title: 'Projects - Sandesh Bagade',
   description:
-    "Explore Sandesh Bagade's projects and contributions in web development using React, Next.js, and more.",
+    "Explore Sandesh Bagade's portfolio of web development projects built with JavaScript, ReactJS, NextJS, Python, and NodeJS for clients worldwide.",
 };
 
 export default function ProjectsPage() {

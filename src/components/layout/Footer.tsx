@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope, FaInstagram } from 'react-icons/fa';
 import { personalInfo } from '@/lib/data';
 
 const Footer = () => {
@@ -15,8 +15,7 @@ const Footer = () => {
               <span className='text-blue-600'>S</span>andesh Bagade
             </h3>
             <p className='text-gray-600 dark:text-gray-400 mb-4 max-w-md'>
-              Software Engineer specializing in front-end development and
-              building modern web applications with React and Next.js.
+              Freelance Full Stack Web Developer | Pickleball Enthusiast | Flute Player | Photography Lover
             </p>
           </div>
 
@@ -83,6 +82,15 @@ const Footer = () => {
               {/* Social Links */}
               <div className='flex space-x-4 mt-4'>
                 <a
+                  href={personalInfo.links.instagram}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='text-gray-600 hover:text-pink-600 dark:text-gray-400 dark:hover:text-pink-500 transition-colors'
+                  aria-label='Instagram'
+                >
+                  <FaInstagram className='h-5 w-5' />
+                </a>
+                <a
                   href={personalInfo.links.github}
                   target='_blank'
                   rel='noopener noreferrer'
@@ -99,15 +107,6 @@ const Footer = () => {
                   aria-label='LinkedIn'
                 >
                   <FaLinkedin className='h-5 w-5' />
-                </a>
-                <a
-                  href={personalInfo.links.twitter}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-500 transition-colors'
-                  aria-label='Twitter'
-                >
-                  <FaTwitter className='h-5 w-5' />
                 </a>
               </div>
             </div>
