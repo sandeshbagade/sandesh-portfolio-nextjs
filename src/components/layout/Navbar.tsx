@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { HiMenu, HiX } from 'react-icons/hi';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
@@ -11,17 +10,17 @@ import { ThemeToggle } from './ThemeToggle';
 import { LanguageSwitcher } from './LanguageSwitcher';
 
 const navLinks = [
-  { path: '#home', label: 'Home', isSection: true },
-  { path: '/about', label: 'About', isSection: false },
-  { path: '#experience', label: 'Work Experience', isSection: true },
-  { path: '#contact', label: 'Contact', isSection: true },
+  { path: '#home', label: 'Home' },
+  { path: '#about', label: 'About' },
+  { path: '#education', label: 'Education' },
+  { path: '#experience', label: 'Work Experience' },
+  { path: '#contact', label: 'Contact' },
 ];
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('#home');
-  const pathname = usePathname();
 
   // Handle scroll effect
   useEffect(() => {
@@ -29,7 +28,7 @@ const Navbar = () => {
       setScrolled(window.scrollY > 20);
 
       // Update active section based on scroll position
-      const sections = ['home', 'about', 'experience', 'contact'];
+      const sections = ['home', 'about', 'education', 'experience', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -55,20 +54,9 @@ const Navbar = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
-  // Smooth scroll to section
-  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
-    e.preventDefault();
-    const sectionId = path.replace('#', '');
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const offset = 80; // Account for fixed navbar
-      const elementPosition = element.offsetTop - offset;
-      window.scrollTo({
-        top: elementPosition,
-        behavior: 'smooth',
-      });
-      setMobileMenuOpen(false);
-    }
+  // Handle navigation click
+  const handleNavClick = () => {
+    setMobileMenuOpen(false);
   };
 
   return (
@@ -90,34 +78,19 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <nav className='hidden md:flex space-x-8 items-center'>
-          {navLinks.map((link) => 
-            link.isSection ? (
-              <a
-                key={link.path}
-                href={link.path}
-                onClick={(e) => scrollToSection(e, link.path)}
-                className={`text-sm transition-colors hover:text-blue-600 cursor-pointer ${
-                  activeSection === link.path
-                    ? 'font-medium text-blue-600'
-                    : 'text-gray-600 dark:text-gray-300'
-                }`}
-              >
-                {link.label}
-              </a>
-            ) : (
-              <Link
-                key={link.path}
-                href={link.path}
-                className={`text-sm transition-colors hover:text-blue-600 ${
-                  pathname === link.path
-                    ? 'font-medium text-blue-600'
-                    : 'text-gray-600 dark:text-gray-300'
-                }`}
-              >
-                {link.label}
-              </Link>
-            )
-          )}
+          {navLinks.map((link) => (
+            <a
+              key={link.path}
+              href={link.path}
+              className={`text-sm transition-colors hover:text-blue-600 cursor-pointer ${
+                activeSection === link.path
+                  ? 'font-medium text-blue-600'
+                  : 'text-gray-600 dark:text-gray-300'
+              }`}
+            >
+              {link.label}
+            </a>
+          ))}
         </nav>
 
         {/* Social Links - Desktop */}
@@ -178,35 +151,20 @@ const Navbar = () => {
             className='md:hidden bg-white dark:bg-gray-900 shadow-lg'
           >
             <div className='container mx-auto px-4 py-4 flex flex-col'>
-              {navLinks.map((link) => 
-                link.isSection ? (
-                  <a
-                    key={link.path}
-                    href={link.path}
-                    onClick={(e) => scrollToSection(e, link.path)}
-                    className={`py-3 text-base transition-colors cursor-pointer ${
-                      activeSection === link.path
-                        ? 'font-medium text-blue-600'
-                        : 'text-gray-600 dark:text-gray-300'
-                    }`}
-                  >
-                    {link.label}
-                  </a>
-                ) : (
-                  <Link
-                    key={link.path}
-                    href={link.path}
-                    className={`py-3 text-base transition-colors ${
-                      pathname === link.path
-                        ? 'font-medium text-blue-600'
-                        : 'text-gray-600 dark:text-gray-300'
-                    }`}
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {link.label}
-                  </Link>
-                )
-              )}
+              {navLinks.map((link) => (
+                <a
+                  key={link.path}
+                  href={link.path}
+                  onClick={handleNavClick}
+                  className={`py-3 text-base transition-colors cursor-pointer ${
+                    activeSection === link.path
+                      ? 'font-medium text-blue-600'
+                      : 'text-gray-600 dark:text-gray-300'
+                  }`}
+                >
+                  {link.label}
+                </a>
+              ))}
 
               {/* Social Links & Settings - Mobile */}
               <div className='flex flex-wrap items-center gap-4 mt-4 pt-4 border-t border-gray-200 dark:border-gray-700'>

@@ -109,28 +109,6 @@ export const education = [
   },
 ];
 
-export const projects: any = [
-  {
-    title: "Open Source Contribution",
-    description:
-      "Merged a Pull Request to improve TypeScript definitions for React Sketch npm package.",
-    links: {
-      github: "https://github.com",
-      live: null,
-    },
-    technologies: ["TypeScript", "React"],
-  },
-  {
-    title: "EEG Wave Analyser Web App",
-    description:
-      "Built a web app to manage EEG Wave data using ReactJS for frontend, Django for Backend.",
-    links: {
-      github: "https://github.com",
-      demo: "https://youtube.com",
-    },
-    technologies: ["ReactJS", "Django", "Python", "JavaScript"],
-  },
-];
 
 export const skills = [
   {
@@ -174,6 +152,13 @@ export const skills = [
 ];
 
 export const professionalInterests = [
+  {
+    title: "Software Development",
+    description:
+      "I build websites and mobile applications for clients around the world. From simple websites to complex web apps, I create digital solutions that help businesses and individuals achieve their goals.",
+    icon: "💻",
+    color: "from-blue-400 to-blue-600",
+  },
   {
     title: "Stock Market Investing",
     description:

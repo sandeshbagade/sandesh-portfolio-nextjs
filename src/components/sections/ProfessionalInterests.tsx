@@ -2,8 +2,10 @@
 
 import { motion } from 'framer-motion';
 import { professionalInterests } from '@/lib/data';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const ProfessionalInterests = () => {
+  const { t } = useLanguage();
   return (
     <section className='py-12 md:py-16 lg:py-20 bg-gray-50 dark:bg-gray-900/50'>
       <div className='container mx-auto px-4 md:px-6'>
@@ -15,7 +17,7 @@ const ProfessionalInterests = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            Professional Interests
+            {t.sections.professionalInterests.title}
           </motion.h2>
           <motion.div
             className='w-20 h-1.5 bg-blue-600 mx-auto rounded-full mb-6'
@@ -31,11 +33,11 @@ const ProfessionalInterests = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            Beyond web development, these areas keep me intellectually engaged and informed.
+            {t.sections.professionalInterests.description}
           </motion.p>
         </div>
 
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto'>
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto'>
           {professionalInterests.map((interest, index) => (
             <motion.div
               key={index}

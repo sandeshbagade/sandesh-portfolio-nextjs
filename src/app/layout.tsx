@@ -15,6 +15,10 @@ const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "";
 export const metadata: Metadata = {
   metadataBase: new URL("https://sandeshbagade.com"),
   title: "Sandesh Bagade | Web Developer, Stock Investor & Pickleball Player",
+  icons: {
+    icon: "/icon.png",
+    apple: "/icon.png",
+  },
   description:
     "Hey! I'm Sandesh from Pune who loves building websites, analyzing stocks, discussing geopolitics, and playing pickleball. This is my personal space where I share my work, hobbies, and life!",
   keywords: [

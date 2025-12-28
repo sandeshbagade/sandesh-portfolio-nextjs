@@ -1,10 +1,9 @@
 import Hero from '@/components/sections/Hero';
-import ProfessionalInterests from '@/components/sections/ProfessionalInterests';
-import Hobbies from '@/components/sections/Hobbies';
+import AboutDetails from '@/components/sections/AboutDetails';
 import Instagram from '@/components/sections/Instagram';
+import Education from '@/components/sections/Education';
 import Experience from '@/components/sections/Experience';
 import Skills from '@/components/sections/Skills';
-import Projects from '@/components/sections/Projects';
 import Contact from '@/components/sections/Contact';
 import { Metadata } from 'next';
 
@@ -17,22 +16,23 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <section id='home'>
+      <div id='home'>
         <Hero />
-      </section>
-      <section id='about' className='scroll-mt-20'>
-        <ProfessionalInterests />
-        <Hobbies />
+      </div>
+      <div id='about' className='scroll-mt-20'>
+        <AboutDetails />
         <Instagram />
-      </section>
-      <section id='experience' className='scroll-mt-20'>
+      </div>
+      <div id='education' className='scroll-mt-20'>
+        <Education />
+      </div>
+      <div id='experience' className='scroll-mt-20'>
         <Experience />
         <Skills />
-        <Projects />
-      </section>
-      <section id='contact' className='scroll-mt-20'>
+      </div>
+      <div id='contact' className='scroll-mt-20'>
         <Contact />
-      </section>
+      </div>
     </>
   );
 }

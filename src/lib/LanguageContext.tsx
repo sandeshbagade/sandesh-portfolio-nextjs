@@ -14,11 +14,32 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguageState] = useState<Language>('en');
 
-  // Load language from localStorage on mount
+  // Detect browser language and set default
   useEffect(() => {
+    // First check if user has previously selected a language
     const saved = localStorage.getItem('language') as Language;
     if (saved && (saved === 'en' || saved === 'hi' || saved === 'mr')) {
       setLanguageState(saved);
+      return;
+    }
+
+    // If no saved preference, detect from browser
+    const browserLang = navigator.language.toLowerCase();
+    
+    // Check for Hindi
+    if (browserLang.startsWith('hi')) {
+      setLanguageState('hi');
+      localStorage.setItem('language', 'hi');
+    }
+    // Check for Marathi
+    else if (browserLang.startsWith('mr')) {
+      setLanguageState('mr');
+      localStorage.setItem('language', 'mr');
+    }
+    // Default to English for all other languages
+    else {
+      setLanguageState('en');
+      localStorage.setItem('language', 'en');
     }
   }, []);
 

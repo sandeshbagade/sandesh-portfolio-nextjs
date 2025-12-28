@@ -20,6 +20,10 @@ export const translations = {
     },
     // Sections
     sections: {
+      professionalInterests: {
+        title: "Professional Interests",
+        description: "Beyond web development, these areas keep me intellectually engaged and informed.",
+      },
       hobbies: {
         title: "Interests & Hobbies",
         description: "Beyond work, these are the activities and interests that I'm passionate about.",
@@ -76,6 +80,10 @@ export const translations = {
     },
     // Sections
     sections: {
+      professionalInterests: {
+        title: "व्यावसायिक रुचियां",
+        description: "वेब विकास के अलावा, ये क्षेत्र मुझे बौद्धिक रूप से व्यस्त और सूचित रखते हैं।",
+      },
       hobbies: {
         title: "रुचियां और शौक",
         description: "काम के अलावा, ये वे गतिविधियां और रुचियां हैं जिनमें मेरी दिलचस्पी है।",
@@ -132,6 +140,10 @@ export const translations = {
     },
     // Sections
     sections: {
+      professionalInterests: {
+        title: "व्यावसायिक रुची",
+        description: "वेब डेव्हलपमेंट व्यतिरिक्त, ही क्षेत्रे मला बौद्धिकदृष्ट्या व्यस्त आणि माहितीपूर्ण ठेवतात।",
+      },
       hobbies: {
         title: "रुची आणि छंद",
         description: "कामाच्या पलीकडे, या गतिविधी आणि रुची आहेत ज्यात माझी आवड आहे।",

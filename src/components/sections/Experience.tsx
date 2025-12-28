@@ -13,11 +13,11 @@ import { useLanguage } from '@/lib/LanguageContext';
 const Experience = () => {
   const { t } = useLanguage();
   return (
-    <section className='py-12 md:py-16 lg:py-20 bg-gray-50 dark:bg-gray-900/50'>
+    <section className='py-12 md:py-16 lg:py-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900/50 dark:to-gray-950'>
       <div className='container mx-auto px-4 md:px-6'>
-        <div className='mb-8 md:mb-12 text-center'>
+        <div className='mb-12 text-center'>
           <motion.h2
-            className='text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3 md:mb-4'
+            className='text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4'
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -26,14 +26,14 @@ const Experience = () => {
             {t.sections.experience.title}
           </motion.h2>
           <motion.div
-            className='w-20 h-1.5 bg-blue-600 mx-auto rounded-full mb-6'
+            className='w-24 h-1.5 bg-blue-600 mx-auto rounded-full mb-6'
             initial={{ opacity: 0, width: 0 }}
-            whileInView={{ opacity: 1, width: 80 }}
+            whileInView={{ opacity: 1, width: 96 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           />
           <motion.p
-            className='text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-base sm:text-lg'
+            className='text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg'
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -43,50 +43,41 @@ const Experience = () => {
           </motion.p>
         </div>
 
-        <div className='space-y-8 md:space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gray-200 dark:before:bg-gray-800'>
+        <div className='max-w-4xl mx-auto space-y-6'>
           {experience.map((job, index) => (
             <motion.div
               key={index}
-              className='relative flex items-start md:flex-row-reverse group'
-              initial={{ opacity: 0, y: 50 }}
+              className='bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 p-6 md:p-8 hover:shadow-xl transition-all duration-300'
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              {/* Timeline circle */}
-              <div className='flex items-center justify-center w-10 h-10 rounded-full border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-blue-600 shadow-md ml-0.5 md:ml-0 md:mr-0.5 z-10'>
-                <HiBriefcase className='w-5 h-5' />
+              <div className='flex items-start gap-4 mb-6'>
+                <div className='flex-shrink-0 w-14 h-14 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center'>
+                  <HiBriefcase className='w-7 h-7 text-blue-600' />
+                </div>
+                <div className='flex-grow'>
+                  <h3 className='text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-2'>
+                    {job.title}
+                  </h3>
+                  <p className='text-lg font-semibold text-blue-600 dark:text-blue-400 mb-3'>
+                    {job.company}
+                  </p>
+                  <div className='flex flex-wrap gap-4 text-sm text-gray-500 dark:text-gray-400'>
+                    <div className='flex items-center gap-1'>
+                      <HiCalendar className='text-blue-600' />
+                      {job.period}
+                    </div>
+                    <div className='flex items-center gap-1'>
+                      <HiLocationMarker className='text-blue-600' />
+                      {job.location}
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              {/* Content Card */}
-              <div className='bg-white dark:bg-gray-800 p-4 sm:p-5 md:p-6 rounded-lg shadow-md border border-gray-200 dark:border-gray-700 ml-4 md:ml-0 md:mr-4 w-full md:w-[calc(50%-2.5rem)]'>
-                <div className='flex flex-col md:flex-row justify-between mb-2'>
-                  <h3 className='text-lg sm:text-xl font-bold text-gray-900 dark:text-white'>
-                    {job.title} @{' '}
-                    <a
-                      href={job.companyUrl}
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      className='text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 hover:underline cursor-pointer'
-                      aria-label={`${job.company} website`}
-                    >
-                      {job.company}
-                    </a>
-                  </h3>
-                </div>
-
-                <div className='flex flex-wrap gap-x-4 gap-y-1 mb-4 text-sm text-gray-500 dark:text-gray-400'>
-                  <div className='flex items-center'>
-                    <HiCalendar className='mr-1 text-blue-600' />
-                    {job.period}
-                  </div>
-                  <div className='flex items-center'>
-                    <HiLocationMarker className='mr-1 text-blue-600' />
-                    {job.location}
-                  </div>
-                </div>
-
-                <ul className='list-disc list-inside space-y-2 mb-4 text-sm sm:text-base text-gray-600 dark:text-gray-300'>
+              <ul className='list-disc list-inside space-y-2 mb-6 text-gray-600 dark:text-gray-300'>
                   {job.description.map((item, itemIndex) => {
                     // For OPA Marketing job, add specific links for mobile, marketing, and client apps
                     if (job.company === 'OPA Marketing' && job.appLinks) {
@@ -148,16 +139,15 @@ const Experience = () => {
                   })}
                 </ul>
 
-                <div className='flex flex-wrap gap-2 mt-4'>
-                  {job.technologies.map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className='px-3 py-1 text-xs font-medium bg-blue-100 dark:bg-blue-900/40 text-blue-800 dark:text-blue-300 rounded-full'
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+              <div className='flex flex-wrap gap-2'>
+                {job.technologies.map((tech, techIndex) => (
+                  <span
+                    key={techIndex}
+                    className='px-3 py-1.5 text-xs font-medium bg-blue-100 dark:bg-blue-900/40 text-blue-800 dark:text-blue-300 rounded-full'
+                  >
+                    {tech}
+                  </span>
+                ))}
               </div>
             </motion.div>
           ))}
