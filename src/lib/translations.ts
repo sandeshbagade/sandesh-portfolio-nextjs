@@ -20,6 +20,25 @@ export const translations = {
     },
     // Sections
     sections: {
+      about: {
+        title: "About Me",
+        personalDetails: "Personal Details",
+        location: "Location",
+        dob: "Date of Birth",
+        languages: "Languages",
+        professionalBackground: "Professional Background",
+        backgroundText1: "I'm a Full Stack Web Developer with a background in Computer Science from NIT Trichy. My journey in software development has been focused on creating effective web solutions using modern technologies.",
+        backgroundText2: "Currently working as a Freelance Web Developer, I collaborate with clients from US, Canada, and Singapore, building web applications using JavaScript, React, Next.js, Python, and Node.js.",
+        professionalInterestsTitle: "Professional Interests",
+        hobbiesTitle: "Interests & Hobbies",
+      },
+      education: {
+        title: "Education 🎓",
+        description: "My academic background and qualifications.",
+        degree: "Degree",
+        institution: "Institution",
+        period: "Period",
+      },
       professionalInterests: {
         title: "Professional Interests",
         description: "Beyond web development, these areas keep me intellectually engaged and informed.",
@@ -80,6 +99,25 @@ export const translations = {
     },
     // Sections
     sections: {
+      about: {
+        title: "मेरे बारे में",
+        personalDetails: "व्यक्तिगत विवरण",
+        location: "स्थान",
+        dob: "जन्म तिथि",
+        languages: "भाषाएं",
+        professionalBackground: "व्यावसायिक पृष्ठभूमि",
+        backgroundText1: "मैं NIT Trichy से कंप्यूटर साइंस की पृष्ठभूमि वाला एक फुल स्टैक वेब डेवलपर हूं। सॉफ्टवेयर विकास में मेरी यात्रा आधुनिक तकनीकों का उपयोग करके प्रभावी वेब समाधान बनाने पर केंद्रित रही है।",
+        backgroundText2: "वर्तमान में फ्रीलांस वेब डेवलपर के रूप में काम करते हुए, मैं US, Canada और Singapore के ग्राहकों के साथ सहयोग करता हूं, JavaScript, React, Next.js, Python और Node.js का उपयोग करके वेब एप्लिकेशन बनाता हूं।",
+        professionalInterestsTitle: "व्यावसायिक रुचियां",
+        hobbiesTitle: "रुचियां और शौक",
+      },
+      education: {
+        title: "शिक्षा 🎓",
+        description: "मेरी शैक्षणिक पृष्ठभूमि और योग्यताएं।",
+        degree: "डिग्री",
+        institution: "संस्थान",
+        period: "अवधि",
+      },
       professionalInterests: {
         title: "व्यावसायिक रुचियां",
         description: "वेब विकास के अलावा, ये क्षेत्र मुझे बौद्धिक रूप से व्यस्त और सूचित रखते हैं।",
@@ -140,6 +178,25 @@ export const translations = {
     },
     // Sections
     sections: {
+      about: {
+        title: "माझ्याबद्दल",
+        personalDetails: "वैयक्तिक तपशील",
+        location: "स्थान",
+        dob: "जन्मतारीख",
+        languages: "भाषा",
+        professionalBackground: "व्यावसायिक पार्श्वभूमी",
+        backgroundText1: "मी NIT Trichy मधून कॉम्प्युटर सायन्सची पार्श्वभूमी असलेला फुल स्टॅक वेब डेव्हलपर आहे. सॉफ्टवेअर डेव्हलपमेंटमधील माझा प्रवास आधुनिक तंत्रज्ञानाचा वापर करून प्रभावी वेब सोल्यूशन्स तयार करण्यावर केंद्रित आहे.",
+        backgroundText2: "सध्या फ्रीलान्स वेब डेव्हलपर म्हणून काम करत आहे, मी US, Canada आणि Singapore च्या क्लायंटसोबत सहकार्य करतो, JavaScript, React, Next.js, Python आणि Node.js वापरून वेब अॅप्लिकेशन तयार करतो.",
+        professionalInterestsTitle: "व्यावसायिक रुची",
+        hobbiesTitle: "रुची आणि छंद",
+      },
+      education: {
+        title: "शिक्षण 🎓",
+        description: "माझी शैक्षणिक पार्श्वभूमी आणि पात्रता।",
+        degree: "पदवी",
+        institution: "संस्था",
+        period: "कालावधी",
+      },
       professionalInterests: {
         title: "व्यावसायिक रुची",
         description: "वेब डेव्हलपमेंट व्यतिरिक्त, ही क्षेत्रे मला बौद्धिकदृष्ट्या व्यस्त आणि माहितीपूर्ण ठेवतात।",

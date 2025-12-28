@@ -4,8 +4,10 @@ import { motion } from 'framer-motion';
 import { HiAcademicCap, HiCalendar } from 'react-icons/hi';
 import { LiaUniversitySolid } from 'react-icons/lia';
 import { education } from '@/lib/data';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const Education = () => {
+  const { t } = useLanguage();
   return (
     <section className='py-12 md:py-16 lg:py-20 bg-white dark:bg-gray-950'>
       <div className='container mx-auto px-4 md:px-6'>
@@ -17,7 +19,7 @@ const Education = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            Education 🎓
+            {t.sections.education.title}
           </motion.h2>
           <motion.div
             className='w-24 h-1.5 bg-blue-600 mx-auto rounded-full mb-6'
@@ -33,7 +35,7 @@ const Education = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            My academic background and qualifications.
+            {t.sections.education.description}
           </motion.p>
         </div>
 
