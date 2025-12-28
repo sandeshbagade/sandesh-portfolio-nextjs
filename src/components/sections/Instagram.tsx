@@ -4,8 +4,10 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { HiExternalLink } from 'react-icons/hi';
 import { personalInfo } from '@/lib/data';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const Instagram = () => {
+  const { t } = useLanguage();
   // Instagram grid placeholder - in a real implementation, you would fetch from Instagram API
   // or use a service like Instagram Basic Display API
   const instagramPosts = [
@@ -28,7 +30,7 @@ const Instagram = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            Life Through My Lens
+            {t.sections.instagram.title}
           </motion.h2>
           <motion.div
             className='w-20 h-1.5 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-600 mx-auto rounded-full mb-6'
@@ -44,7 +46,7 @@ const Instagram = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            Follow my journey on Instagram for glimpses of my adventures, hobbies, and daily life
+            {t.sections.instagram.description}
           </motion.p>
         </div>
 
@@ -75,7 +77,7 @@ const Instagram = () => {
                   </div>
                 </div>
                 <p className='text-white/90 text-sm sm:text-base md:text-lg max-w-md mx-auto'>
-                  Join me on Instagram to see my latest adventures, pickleball games, music sessions, and more!
+                  {t.sections.instagram.cta}
                 </p>
               </div>
 
@@ -85,7 +87,7 @@ const Instagram = () => {
                 rel='noopener noreferrer'
                 className='group bg-white hover:bg-gray-100 text-gray-900 font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transform hover:scale-105 w-full sm:w-auto'
               >
-                Visit Instagram
+                {t.sections.instagram.button}
                 <HiExternalLink className='w-5 h-5 group-hover:translate-x-1 transition-transform' />
               </Link>
             </div>
@@ -137,7 +139,7 @@ const Instagram = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.8 }}
           >
-            Click any image to visit my Instagram profile and see all my posts
+            {t.sections.instagram.note}
           </motion.p>
         </div>
       </div>

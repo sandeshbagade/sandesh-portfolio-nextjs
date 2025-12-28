@@ -8,23 +8,40 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import { personalInfo } from '@/lib/data';
 import { ThemeToggle } from './ThemeToggle';
+import { LanguageSwitcher } from './LanguageSwitcher';
 
 const navLinks = [
-  { path: '/', label: 'Home' },
-  { path: '/about', label: 'About' },
-  { path: '/projects', label: 'Projects' },
-  { path: '/contact', label: 'Contact' },
+  { path: '#home', label: 'Home', isSection: true },
+  { path: '/about', label: 'About', isSection: false },
+  { path: '#experience', label: 'Work Experience', isSection: true },
+  { path: '#contact', label: 'Contact', isSection: true },
 ];
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('#home');
   const pathname = usePathname();
 
   // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
+
+      // Update active section based on scroll position
+      const sections = ['home', 'about', 'experience', 'contact'];
+      const scrollPosition = window.scrollY + 100;
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(`#${section}`);
+            break;
+          }
+        }
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -36,6 +53,22 @@ const Navbar = () => {
   // Toggle mobile menu
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
+  };
+
+  // Smooth scroll to section
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
+    e.preventDefault();
+    const sectionId = path.replace('#', '');
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const offset = 80; // Account for fixed navbar
+      const elementPosition = element.offsetTop - offset;
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth',
+      });
+      setMobileMenuOpen(false);
+    }
   };
 
   return (
@@ -57,19 +90,34 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <nav className='hidden md:flex space-x-8 items-center'>
-          {navLinks.map((link) => (
-            <Link
-              key={link.path}
-              href={link.path}
-              className={`text-sm transition-colors hover:text-blue-600 ${
-                pathname === link.path
-                  ? 'font-medium text-blue-600'
-                  : 'text-gray-600 dark:text-gray-300'
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => 
+            link.isSection ? (
+              <a
+                key={link.path}
+                href={link.path}
+                onClick={(e) => scrollToSection(e, link.path)}
+                className={`text-sm transition-colors hover:text-blue-600 cursor-pointer ${
+                  activeSection === link.path
+                    ? 'font-medium text-blue-600'
+                    : 'text-gray-600 dark:text-gray-300'
+                }`}
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                key={link.path}
+                href={link.path}
+                className={`text-sm transition-colors hover:text-blue-600 ${
+                  pathname === link.path
+                    ? 'font-medium text-blue-600'
+                    : 'text-gray-600 dark:text-gray-300'
+                }`}
+              >
+                {link.label}
+              </Link>
+            )
+          )}
         </nav>
 
         {/* Social Links - Desktop */}
@@ -101,6 +149,7 @@ const Navbar = () => {
           >
             <FaLinkedin className='h-5 w-5' />
           </a>
+          <LanguageSwitcher />
           <ThemeToggle />
         </div>
 
@@ -129,23 +178,38 @@ const Navbar = () => {
             className='md:hidden bg-white dark:bg-gray-900 shadow-lg'
           >
             <div className='container mx-auto px-4 py-4 flex flex-col'>
-              {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  href={link.path}
-                  className={`py-3 text-base transition-colors ${
-                    pathname === link.path
-                      ? 'font-medium text-blue-600'
-                      : 'text-gray-600 dark:text-gray-300'
-                  }`}
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {navLinks.map((link) => 
+                link.isSection ? (
+                  <a
+                    key={link.path}
+                    href={link.path}
+                    onClick={(e) => scrollToSection(e, link.path)}
+                    className={`py-3 text-base transition-colors cursor-pointer ${
+                      activeSection === link.path
+                        ? 'font-medium text-blue-600'
+                        : 'text-gray-600 dark:text-gray-300'
+                    }`}
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={link.path}
+                    href={link.path}
+                    className={`py-3 text-base transition-colors ${
+                      pathname === link.path
+                        ? 'font-medium text-blue-600'
+                        : 'text-gray-600 dark:text-gray-300'
+                    }`}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                )
+              )}
 
-              {/* Social Links - Mobile */}
-              <div className='flex space-x-6 mt-4 pt-4 border-t border-gray-200 dark:border-gray-700'>
+              {/* Social Links & Settings - Mobile */}
+              <div className='flex flex-wrap items-center gap-4 mt-4 pt-4 border-t border-gray-200 dark:border-gray-700'>
                 <a
                   href={personalInfo.links.instagram}
                   target='_blank'
@@ -173,6 +237,7 @@ const Navbar = () => {
                 >
                   <FaLinkedin className='h-5 w-5' />
                 </a>
+                <LanguageSwitcher />
                 <ThemeToggle />
               </div>
             </div>

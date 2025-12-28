@@ -4,8 +4,10 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { projects } from '@/lib/data';
 import { FaGithub, FaExternalLinkAlt, FaYoutube, FaCode } from 'react-icons/fa';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const Projects = () => {
+  const { t } = useLanguage();
   return (
     <section className='py-12 md:py-16 lg:py-20'>
       <div className='container mx-auto px-4 md:px-6'>
@@ -17,7 +19,7 @@ const Projects = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            Projects
+            {t.sections.projects.title}
           </motion.h2>
           <motion.div
             className='w-20 h-1.5 bg-blue-600 mx-auto rounded-full mb-6'
@@ -33,8 +35,7 @@ const Projects = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            Explore some of my recent projects that showcase my technical
-            skills.
+            {t.sections.projects.description}
           </motion.p>
         </div>
 

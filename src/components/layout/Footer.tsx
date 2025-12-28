@@ -1,9 +1,24 @@
+'use client';
+
 import Link from 'next/link';
 import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope, FaInstagram } from 'react-icons/fa';
 import { personalInfo } from '@/lib/data';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const offset = 80;
+      const elementPosition = element.offsetTop - offset;
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth',
+      });
+    }
+  };
 
   return (
     <footer className='bg-gray-50 dark:bg-gray-900 py-12 border-t border-gray-200 dark:border-gray-800'>
@@ -26,12 +41,13 @@ const Footer = () => {
             </h3>
             <ul className='space-y-2'>
               <li>
-                <Link
-                  href='/'
-                  className='text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 transition-colors'
+                <a
+                  href='#home'
+                  onClick={(e) => scrollToSection(e, 'home')}
+                  className='text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 transition-colors cursor-pointer'
                 >
                   Home
-                </Link>
+                </a>
               </li>
               <li>
                 <Link
@@ -42,20 +58,22 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link
-                  href='/projects'
-                  className='text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 transition-colors'
+                <a
+                  href='#experience'
+                  onClick={(e) => scrollToSection(e, 'experience')}
+                  className='text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 transition-colors cursor-pointer'
                 >
-                  Projects
-                </Link>
+                  Work Experience
+                </a>
               </li>
               <li>
-                <Link
-                  href='/contact'
-                  className='text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 transition-colors'
+                <a
+                  href='#contact'
+                  onClick={(e) => scrollToSection(e, 'contact')}
+                  className='text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 transition-colors cursor-pointer'
                 >
                   Contact
-                </Link>
+                </a>
               </li>
             </ul>
           </div>

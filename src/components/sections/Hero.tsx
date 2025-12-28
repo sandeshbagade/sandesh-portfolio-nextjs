@@ -4,8 +4,10 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import { HiArrowNarrowRight } from 'react-icons/hi';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const Hero = () => {
+  const { t } = useLanguage();
   return (
     <section className='py-16 md:py-20 lg:py-32 relative overflow-hidden'>
       {/* Background gradient */}
@@ -21,34 +23,47 @@ const Hero = () => {
             transition={{ duration: 0.5 }}
           >
             <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-3 md:mb-4 leading-tight'>
-              Hi, I&apos;m <span className='text-blue-600'>Sandesh Bagade</span>
+              {t.hero.greeting} <span className='text-blue-600'>{t.hero.name}</span> 👋
             </h1>
-            <h2 className='text-lg sm:text-xl md:text-2xl font-medium text-gray-700 dark:text-gray-300 mb-3 md:mb-4'>
-              Freelance Full Stack Web Developer
-            </h2>
-            <p className='text-sm sm:text-base md:text-lg text-blue-600 dark:text-blue-400 mb-4 md:mb-6 font-medium leading-relaxed'>
-              📈 Stock Market Investor<br className='sm:hidden' /> | 🌍 Geopolitics Enthusiast<br className='sm:hidden' /> | 🏓 Pickleball Player
+            <p className='text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-4 md:mb-6 leading-relaxed max-w-lg'>
+              {t.hero.intro}
             </p>
-            <p className='text-base sm:text-lg text-gray-600 dark:text-gray-400 mb-6 md:mb-8 leading-relaxed max-w-lg'>
-              Building amazing web experiences with JavaScript, ReactJS, NextJS, Python, and NodeJS. 
-              Working with clients from <span className='font-semibold text-gray-900 dark:text-white'>US, Canada, and Singapore</span> to bring their digital visions to life.
+            <div className='flex flex-wrap gap-2 mb-4 md:mb-6'>
+              <span className='px-3 py-1.5 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium'>
+                {t.hero.badges.developer}
+              </span>
+              <span className='px-3 py-1.5 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-full text-sm font-medium'>
+                {t.hero.badges.investor}
+              </span>
+              <span className='px-3 py-1.5 bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 rounded-full text-sm font-medium'>
+                {t.hero.badges.mindfulness}
+              </span>
+              <span className='px-3 py-1.5 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 rounded-full text-sm font-medium'>
+                {t.hero.badges.fitness}
+              </span>
+              <span className='px-3 py-1.5 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 rounded-full text-sm font-medium'>
+                {t.hero.badges.geopolitics}
+              </span>
+            </div>
+            <p className='text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-6 md:mb-8 leading-relaxed max-w-lg'>
+              {t.hero.location}
             </p>
 
             <div className='flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto'>
-              <Link
-                href='/contact'
-                className='bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2 text-center'
-              >
-                Get in Touch
-                <HiArrowNarrowRight />
-              </Link>
               <Link
                 href='https://www.instagram.com/sandesh_bagade'
                 target='_blank'
                 rel='noopener noreferrer'
                 className='bg-gradient-to-r from-purple-600 via-pink-600 to-orange-600 hover:from-purple-700 hover:via-pink-700 hover:to-orange-700 text-white font-medium py-3 px-6 rounded-lg transition-all flex items-center justify-center gap-2 text-center'
               >
-                📸 Instagram
+                {t.hero.buttons.instagram}
+              </Link>
+              <Link
+                href='/contact'
+                className='bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2 text-center'
+              >
+                {t.hero.buttons.contact}
+                <HiArrowNarrowRight />
               </Link>
             </div>
           </motion.div>

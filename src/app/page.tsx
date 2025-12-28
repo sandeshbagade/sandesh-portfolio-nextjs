@@ -1,28 +1,38 @@
 import Hero from '@/components/sections/Hero';
-import Experience from '@/components/sections/Experience';
-import Skills from '@/components/sections/Skills';
+import ProfessionalInterests from '@/components/sections/ProfessionalInterests';
 import Hobbies from '@/components/sections/Hobbies';
 import Instagram from '@/components/sections/Instagram';
+import Experience from '@/components/sections/Experience';
+import Skills from '@/components/sections/Skills';
 import Projects from '@/components/sections/Projects';
 import Contact from '@/components/sections/Contact';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Sandesh Bagade | Full Stack Developer & Creative Soul',
+  title: 'Sandesh Bagade | Web Developer, Stock Investor & Mindfulness Practitioner',
   description:
-    'Welcome to my personal space! I\'m Sandesh Bagade, a Freelance Full Stack Web Developer working with clients from US, Canada, and Singapore. When I\'m not coding, you\'ll find me playing pickleball, making music with my flute, or capturing moments through photography. Explore my work, hobbies, and journey!',
+    'Sandesh Bagade - Full Stack Web Developer and Stock Market Investor from Pune. Passionate about technology, markets, mindful living, health & fitness, and various interests.',
 };
 
 export default function Home() {
   return (
     <>
-      <Hero />
-      <Experience />
-      <Skills />
-      <Hobbies />
-      <Instagram />
-      <Projects />
-      <Contact />
+      <section id='home'>
+        <Hero />
+      </section>
+      <section id='about' className='scroll-mt-20'>
+        <ProfessionalInterests />
+        <Hobbies />
+        <Instagram />
+      </section>
+      <section id='experience' className='scroll-mt-20'>
+        <Experience />
+        <Skills />
+        <Projects />
+      </section>
+      <section id='contact' className='scroll-mt-20'>
+        <Contact />
+      </section>
     </>
   );
 }

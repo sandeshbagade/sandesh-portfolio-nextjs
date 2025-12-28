@@ -4,7 +4,7 @@ export const personalInfo = {
   name: "Sandesh Bagade",
   email: "sandeshbagade25@gmail.com",
   phone: "+917743929675",
-  location: "Mumbai, India",
+  location: "Pune, India",
   dateOfBirth: "21st September 1998",
   languages: ["English", "Hindi", "Marathi"],
   links: {
@@ -14,9 +14,9 @@ export const personalInfo = {
     website: "https://sandeshbagade.com",
   },
   about:
-    "Hey there! I'm Sandesh, a passionate Full Stack Web Developer who loves building amazing digital experiences. When I'm not coding, you'll find me analyzing stocks, discussing geopolitics, playing pickleball, or creating music with my flute. I believe in blending creativity with technology to create something truly special.",
+    "I'm Sandesh from Pune - a Full Stack Web Developer and Stock Market Investor with a keen interest in geopolitics. Beyond work, I'm passionate about mindful living, health & fitness, pickleball, travel, photography, and playing the flute.",
   tagline:
-    "Full Stack Developer | Stock Market Investor | Geopolitics Enthusiast",
+    "Web Developer | Stock Market Investor | Mindfulness Practitioner | Fitness Enthusiast",
 };
 
 export const experience = [
@@ -173,47 +173,64 @@ export const skills = [
   },
 ];
 
-export const hobbies = [
+export const professionalInterests = [
   {
     title: "Stock Market Investing",
     description:
-      "Active stock market investor who takes swing trades and invests in companies based on fundamental analysis. Love analyzing market trends and company financials!",
+      "Active investor focusing on swing trades and fundamental analysis. I analyze company financials, market trends, and economic indicators to make informed investment decisions.",
     icon: "📈",
     color: "from-emerald-400 to-emerald-600",
   },
   {
     title: "Geopolitics",
     description:
-      "Keen interest in geopolitics and how global events shape our world. Love discussing international relations, economics, and their impact on markets and society.",
+      "Strong interest in geopolitics and international relations. Understanding how global events shape economies, markets, and technology.",
     icon: "🌍",
     color: "from-indigo-400 to-indigo-600",
+  },
+];
+
+export const hobbies = [
+  {
+    title: "Mindfulness & Spirituality",
+    description:
+      "I practice mindful living and spirituality (not religious). Mindfulness helps me stay present, focused, and balanced in all aspects of life.",
+    icon: "🧘",
+    color: "from-violet-400 to-violet-600",
+  },
+  {
+    title: "Health & Fitness",
+    description:
+      "Regular gym-goer who is passionate about health and nutrition. I cook my own meals focusing on proper macros and micros, not just taste. Health is a priority.",
+    icon: "💪",
+    color: "from-red-400 to-red-600",
   },
   {
     title: "Pickleball",
     description:
-      "Love playing pickleball! It's a great way to stay active and meet new people. Always up for a game!",
+      "Regular pickleball player who enjoys the strategic and athletic aspects of the sport. Great way to stay active and competitive.",
     icon: "🏓",
     color: "from-green-400 to-green-600",
   },
   {
-    title: "Flute",
+    title: "Travel",
     description:
-      "Playing the flute is my creative outlet. Music helps me relax and express myself in ways code cannot.",
-    icon: "🎵",
-    color: "from-purple-400 to-purple-600",
+      "Exploring new places and cultures. Travel brings fresh perspectives and enriches life experiences.",
+    icon: "✈️",
+    color: "from-blue-400 to-blue-600",
   },
   {
     title: "Photography",
     description:
-      "Capturing moments and sharing them on Instagram. Check out my feed to see the world through my lens!",
+      "Capturing moments through photography. Follow my Instagram to see my visual stories and experiences.",
     icon: "📸",
     color: "from-pink-400 to-pink-600",
   },
   {
-    title: "Travel",
+    title: "Flute",
     description:
-      "Exploring new places and cultures. Every journey brings new perspectives and inspiration.",
-    icon: "✈️",
-    color: "from-blue-400 to-blue-600",
+      "Playing the flute as a creative outlet. It provides balance and helps with relaxation.",
+    icon: "🎵",
+    color: "from-purple-400 to-purple-600",
   },
 ];

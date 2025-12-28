@@ -4,35 +4,43 @@ import './globals.css';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { ThemeProvider } from '@/components/layout/ThemeProvider';
+import { LanguageProvider } from '@/lib/LanguageContext';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
 
 const inter = Inter({ subsets: ['latin'] });
 
+// Add your Google Analytics Measurement ID here
+// Get it from: https://analytics.google.com/
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || '';
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://sandeshbagade.com'),
-  title: 'Sandesh Bagade | Full Stack Developer & Creative Soul',
+  title: 'Sandesh Bagade | Web Developer, Stock Investor & Pickleball Player',
   description:
-    'Welcome to my personal space! I\'m Sandesh Bagade, a Freelance Full Stack Web Developer working with clients from US, Canada, and Singapore. Passionate about building amazing web experiences, playing pickleball, making music with my flute, and capturing life through photography.',
+    'Hey! I\'m Sandesh from Pune who loves building websites, analyzing stocks, discussing geopolitics, and playing pickleball. This is my personal space where I share my work, hobbies, and life!',
   keywords: [
     'Sandesh Bagade',
-    'Full Stack Developer',
-    'Freelance Web Developer',
-    'React Developer',
-    'Next.js Developer',
-    'JavaScript Developer',
-    'Python Developer',
-    'NodeJS Developer',
-    'Pickleball',
+    'Web Developer Pune',
+    'Freelance Developer',
+    'Stock Market Investor',
+    'Geopolitics',
+    'Pickleball Pune',
     'Flute Player',
-    'Photography',
-    'Mumbai',
+    'React Developer',
+    'Next.js',
+    'JavaScript',
+    'Python',
+    'NodeJS',
+    'NIT Trichy',
+    'Pune',
     'India',
   ],
   authors: [{ name: 'Sandesh Bagade' }],
   creator: 'Sandesh Bagade',
   openGraph: {
-    title: 'Sandesh Bagade | Full Stack Developer & Creative Soul',
+    title: 'Sandesh Bagade | Web Developer, Stock Investor & Pickleball Player',
     description:
-      'Freelance Full Stack Web Developer | Pickleball Enthusiast | Flute Player | Photography Lover',
+      'Web Developer | Stock Market Investor | Geopolitics Enthusiast | Pickleball Player | Flute Lover',
     type: 'website',
   },
 };
@@ -47,15 +55,18 @@ export default function RootLayout({
       <body
         className={`${inter.className} bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100`}
       >
+        {GA_MEASUREMENT_ID && <GoogleAnalytics GA_MEASUREMENT_ID={GA_MEASUREMENT_ID} />}
         <ThemeProvider
           attribute='class'
           defaultTheme='light'
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
-          <main className='min-h-screen pt-20'>{children}</main>
-          <Footer />
+          <LanguageProvider>
+            <Navbar />
+            <main className='min-h-screen pt-20'>{children}</main>
+            <Footer />
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>

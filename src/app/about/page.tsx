@@ -96,59 +96,58 @@ export default function AboutPage() {
         <div className='col-span-1 lg:col-span-2 space-y-8 md:space-y-12'>
           <div>
             <h2 className='text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4 md:mb-6'>
-              My Story
+              Professional Background
             </h2>
             <div className='space-y-4 text-sm sm:text-base text-gray-600 dark:text-gray-300'>
               <p>
-                Hey there! I&apos;m Sandesh, a passionate Full Stack Web Developer who loves building amazing digital experiences. 
-                My journey in software development began during my undergraduate studies at NIT Trichy, where I discovered my 
-                passion for creating elegant solutions to complex problems.
+                I&apos;m a Full Stack Web Developer with a background in Computer Science from NIT Trichy. 
+                My journey in software development has been focused on creating effective web solutions using modern technologies.
               </p>
               <p>
-                Currently, I work as a <span className='font-semibold text-gray-900 dark:text-white'>Freelance Full Stack Web Developer</span>, 
-                collaborating with clients from <span className='font-semibold text-gray-900 dark:text-white'>US, Canada, and Singapore</span>. 
-                I specialize in JavaScript, ReactJS, NextJS, Python, and NodeJS, building everything from responsive web applications 
-                to complex full-stack solutions. With over 4 years of professional experience, I&apos;ve had the opportunity to work 
-                with diverse technologies and deliver projects that make a real impact.
+                Currently working as a <span className='font-semibold text-gray-900 dark:text-white'>Freelance Web Developer</span>, 
+                I collaborate with clients from <span className='font-semibold text-gray-900 dark:text-white'>US, Canada, and Singapore</span>, 
+                building web applications using JavaScript, React, Next.js, Python, and Node.js. Each project brings unique challenges 
+                and opportunities for growth.
               </p>
               <p>
-                What drives me is the desire to create technology that not only solves problems but also delights users. 
-                I approach each project with dedication, creativity, and a commitment to excellence. Whether it&apos;s 
-                improving user experiences, optimizing performance, or building something entirely new, I bring passion 
-                and expertise to every line of code.
+                Beyond software development, I maintain active interests in stock market investing, geopolitics, and sports. 
+                These diverse interests help me bring varied perspectives to my work and life.
               </p>
             </div>
           </div>
 
           <div>
             <h2 className='text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4 md:mb-6'>
-              Beyond the Code
+              Beyond Work
             </h2>
             <div className='space-y-4 text-sm sm:text-base text-gray-600 dark:text-gray-300'>
               <p>
-                I&apos;m an active <span className='font-semibold text-gray-900 dark:text-white'>stock market investor</span> 📈 
-                who takes swing trades and invests in companies based on fundamental analysis. I love diving deep into company 
-                financials, analyzing market trends, and understanding what makes businesses tick. The intersection of data, 
-                strategy, and market psychology fascinates me!
+                <span className='font-semibold text-gray-900 dark:text-white'>Stock Market Investing 📈</span> - Active investor focusing on swing trades 
+                and fundamental analysis. I analyze company financials, market trends, and economic indicators to make informed investment decisions. 
+                This complements my technical background and keeps me connected to business and economics.
               </p>
               <p>
-                I have a <span className='font-semibold text-gray-900 dark:text-white'>keen interest in geopolitics</span> 🌍 
-                and love discussing how global events shape our world. From international relations to economic policies, 
-                I&apos;m always eager to understand the bigger picture and how geopolitical shifts impact markets, technology, 
-                and society. If you want to talk about how global things are shaping, I&apos;m all ears!
+                <span className='font-semibold text-gray-900 dark:text-white'>Geopolitics 🌍</span> - Strong interest in geopolitics and international 
+                relations. Understanding how global events shape economies, markets, and technology is intellectually stimulating and helps me see 
+                the bigger picture in both investing and technology.
               </p>
               <p>
-                When I&apos;m not analyzing markets or following world events, you&apos;ll find me on the pickleball court! 🏓 
-                I&apos;m passionate about the game and love the combination of strategy, agility, and fun it brings. It&apos;s 
-                a great way to stay active and meet amazing people.
+                <span className='font-semibold text-gray-900 dark:text-white'>Mindfulness & Spirituality 🧘</span> - I practice mindful living and 
+                spirituality (not religious). Mindfulness helps me stay present, focused, and balanced in all aspects of life. It&apos;s essential 
+                for maintaining clarity in both work and personal life.
               </p>
               <p>
-                Music is another big part of my life. I play the flute 🎵, and it&apos;s my creative outlet that helps me 
-                relax and express myself in ways that code cannot. There&apos;s something magical about creating melodies 
-                and losing yourself in the rhythm.
+                <span className='font-semibold text-gray-900 dark:text-white'>Health & Fitness 💪</span> - Regular gym-goer who is passionate about 
+                health and nutrition. I cook my own meals, focusing on proper macros and micros rather than just taste. Health is a priority, 
+                and I believe in fueling the body correctly for optimal performance.
               </p>
               <p>
-                I&apos;m also passionate about photography 📸 and love capturing moments through my lens. Check out my{' '}
+                <span className='font-semibold text-gray-900 dark:text-white'>Pickleball 🏓</span> - Regular pickleball player enjoying the strategic 
+                and athletic aspects of the sport. If you&apos;re in Pune and interested in playing, feel free to reach out.
+              </p>
+              <p>
+                <span className='font-semibold text-gray-900 dark:text-white'>Travel & Photography ✈️📸</span> - I enjoy traveling and capturing 
+                experiences through photography. Follow my{' '}
                 <a
                   href='https://www.instagram.com/sandesh_bagade'
                   target='_blank'
@@ -157,18 +156,22 @@ export default function AboutPage() {
                 >
                   Instagram
                 </a>{' '}
-                to see the world through my perspective - from travel adventures to everyday moments that inspire me.
+                to see my visual stories.
+              </p>
+              <p>
+                <span className='font-semibold text-gray-900 dark:text-white'>Flute 🎵</span> - I play the flute as a creative outlet. 
+                It provides balance and aids in relaxation and mindfulness practice.
               </p>
             </div>
           </div>
 
           <div className='pt-4'>
             <Link
-              href='/projects'
+              href='/experience'
               className='inline-flex items-center text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 font-medium group cursor-pointer'
-              aria-label='View my projects'
+              aria-label='View my work experience'
             >
-              View my projects
+              View Work Experience
               <CgArrowLongRight className='ml-2 group-hover:translate-x-2 transition-transform' />
             </Link>
           </div>

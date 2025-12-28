@@ -2,8 +2,10 @@
 
 import { motion } from 'framer-motion';
 import { skills } from '@/lib/data';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const Skills = () => {
+  const { t } = useLanguage();
   return (
     <section className='py-12 md:py-16 lg:py-20 bg-gray-50 dark:bg-gray-900/50'>
       <div className='container mx-auto px-4 md:px-6'>
@@ -15,7 +17,7 @@ const Skills = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            Skills & Expertise
+            {t.sections.skills.title}
           </motion.h2>
           <motion.div
             className='w-20 h-1.5 bg-blue-600 mx-auto rounded-full mb-6'
@@ -31,7 +33,7 @@ const Skills = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            Technologies and tools I work with on a regular basis.
+            {t.sections.skills.description}
           </motion.p>
         </div>
 

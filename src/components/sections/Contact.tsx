@@ -12,8 +12,10 @@ import {
   FaLanguage,
 } from 'react-icons/fa';
 import { personalInfo } from '@/lib/data';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const Contact = () => {
+  const { t } = useLanguage();
   return (
     <section className='py-12 md:py-16 lg:py-20'>
       <div className='container mx-auto px-4 md:px-6'>
@@ -25,7 +27,7 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            Get In Touch
+            {t.sections.contact.title}
           </motion.h2>
           <motion.div
             className='w-20 h-1.5 bg-blue-600 mx-auto rounded-full mb-6'
@@ -41,8 +43,7 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            Feel free to reach out for collaboration, opportunities, or just to
-            say hello! Connect with me through any of these channels.
+            {t.sections.contact.description}
           </motion.p>
         </div>
 
@@ -64,7 +65,7 @@ const Contact = () => {
                   </div>
                   <div className='ml-3 sm:ml-4'>
                     <h4 className='text-base sm:text-lg font-medium text-gray-900 dark:text-white mb-1'>
-                      Email
+                      {t.sections.contact.email}
                     </h4>
                     <a
                       href={`mailto:${personalInfo.email}`}
@@ -81,7 +82,7 @@ const Contact = () => {
                   </div>
                   <div className='ml-3 sm:ml-4'>
                     <h4 className='text-base sm:text-lg font-medium text-gray-900 dark:text-white mb-1'>
-                      Phone
+                      {t.sections.contact.phone}
                     </h4>
                     <a
                       href={`tel:${personalInfo.phone}`}
@@ -98,7 +99,7 @@ const Contact = () => {
                   </div>
                   <div className='ml-3 sm:ml-4'>
                     <h4 className='text-base sm:text-lg font-medium text-gray-900 dark:text-white mb-1'>
-                      Location
+                      {t.sections.contact.location}
                     </h4>
                     <p className='text-sm sm:text-base text-gray-600 dark:text-gray-400'>
                       {personalInfo.location}
@@ -115,7 +116,7 @@ const Contact = () => {
                   </div>
                   <div className='ml-3 sm:ml-4'>
                     <h4 className='text-base sm:text-lg font-medium text-gray-900 dark:text-white mb-1'>
-                      Date of Birth
+                      {t.sections.contact.dob}
                     </h4>
                     <p className='text-sm sm:text-base text-gray-600 dark:text-gray-400'>
                       {personalInfo.dateOfBirth}
@@ -129,7 +130,7 @@ const Contact = () => {
                   </div>
                   <div className='ml-3 sm:ml-4'>
                     <h4 className='text-base sm:text-lg font-medium text-gray-900 dark:text-white mb-1'>
-                      Languages
+                      {t.sections.contact.languages}
                     </h4>
                     <p className='text-sm sm:text-base text-gray-600 dark:text-gray-400'>
                       {personalInfo.languages.join(', ')}
@@ -143,7 +144,7 @@ const Contact = () => {
                   </div>
                   <div className='ml-3 sm:ml-4'>
                     <h4 className='text-base sm:text-lg font-medium text-gray-900 dark:text-white mb-2'>
-                      Social
+                      {t.sections.contact.social}
                     </h4>
                     <div className='flex space-x-3 sm:space-x-4'>
                       <a
