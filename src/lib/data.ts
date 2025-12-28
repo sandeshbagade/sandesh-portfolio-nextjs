@@ -8,11 +8,12 @@ export const personalInfo = {
   links: {
     linkedin: 'https://www.linkedin.com/in/sandesh-bagade/',
     github: 'https://github.com',
-    twitter: 'https://twitter.com',
+    instagram: 'https://www.instagram.com/sandesh_bagade',
     website: 'https://sandeshbagade.com',
   },
   about:
-    "I'm a Software Engineer with expertise in front-end development, focusing on building responsive web applications with modern JavaScript frameworks. I have experience working with data visualization, API design, and implementing chatbot features.",
+    "Hey there! I'm Sandesh, a passionate Full Stack Web Developer who loves building amazing digital experiences. When I'm not coding, you'll find me playing pickleball or creating music with my flute. I believe in blending creativity with technology to create something truly special.",
+  tagline: 'Full Stack Developer | Pickleball Enthusiast | Flute Player',
 };
 
 export const experience = [
