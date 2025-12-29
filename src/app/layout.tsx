@@ -16,8 +16,15 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://sandeshbagade.com"),
   title: "Sandesh Bagade | Web Developer, Stock Investor & Pickleball Player",
   icons: {
-    icon: "/icon.png",
-    apple: "/icon.png",
+    icon: [
+      { url: "/icon-16.png", sizes: "16x16", type: "image/png" },
+      { url: "/icon-32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: "/icon-192.png",
+    other: [
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
   },
   description:
     "Hey! I'm Sandesh from Pune who loves building websites, analyzing stocks, discussing geopolitics, and playing pickleball. This is my personal space where I share my work, hobbies, and life!",
