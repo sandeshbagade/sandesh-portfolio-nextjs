@@ -6,6 +6,7 @@ import Footer from "@/components/layout/Footer";
 import { ThemeProvider } from "@/components/layout/ThemeProvider";
 import { LanguageProvider } from "@/lib/LanguageContext";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import BiodataGenerator from "@/components/BiodataGenerator";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -78,6 +79,7 @@ export default function RootLayout({
             <Navbar />
             <main className='min-h-screen pt-20'>{children}</main>
             <Footer />
+            <BiodataGenerator />
           </LanguageProvider>
         </ThemeProvider>
       </body>

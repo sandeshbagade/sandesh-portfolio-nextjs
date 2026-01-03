@@ -2,12 +2,13 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { HiMenu, HiX } from 'react-icons/hi';
+import { HiMenu, HiX, HiDownload } from 'react-icons/hi';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import { personalInfo } from '@/lib/data';
 import { ThemeToggle } from './ThemeToggle';
 import { LanguageSwitcher } from './LanguageSwitcher';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const navLinks = [
   { path: '#home', label: 'Home' },
@@ -18,6 +19,7 @@ const navLinks = [
 ];
 
 const Navbar = () => {
+  const { t } = useLanguage();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('#home');
@@ -59,6 +61,21 @@ const Navbar = () => {
     setMobileMenuOpen(false);
   };
 
+  // Handle biodata download
+  const handleBiodataDownload = () => {
+    if (typeof window !== 'undefined') {
+      // Add a small delay to ensure the component has mounted
+      setTimeout(() => {
+        if ((window as any).generateBiodataPDF) {
+          (window as any).generateBiodataPDF();
+        } else {
+          console.error('Biodata PDF generator not available');
+          alert('PDF generator is loading. Please wait a moment and try again.');
+        }
+      }, 100);
+    }
+  };
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -95,6 +112,14 @@ const Navbar = () => {
 
         {/* Social Links - Desktop */}
         <div className='hidden md:flex items-center space-x-4'>
+          <button
+            onClick={handleBiodataDownload}
+            className='flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors'
+            aria-label='Download Biodata'
+          >
+            <HiDownload className='h-4 w-4' />
+            {t.biodata.downloadButton}
+          </button>
           <a
             href={personalInfo.links.instagram}
             target='_blank'
@@ -165,6 +190,16 @@ const Navbar = () => {
                   {link.label}
                 </a>
               ))}
+
+              {/* Biodata Download - Mobile */}
+              <button
+                onClick={handleBiodataDownload}
+                className='flex items-center justify-center gap-2 w-full px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors mt-4'
+                aria-label='Download Biodata'
+              >
+                <HiDownload className='h-4 w-4' />
+                {t.biodata.downloadButton}
+              </button>
 
               {/* Social Links & Settings - Mobile */}
               <div className='flex flex-wrap items-center gap-4 mt-4 pt-4 border-t border-gray-200 dark:border-gray-700'>
