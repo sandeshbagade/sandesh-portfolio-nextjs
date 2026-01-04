@@ -121,7 +121,7 @@ export async function POST(request: NextRequest) {
     let yPos = margin;
 
     const availableWidth = pageWidth - 3 * margin;
-    const photoWidth = availableWidth * 0.4;
+    const photoWidth = availableWidth * 0.4 * 1.35;
     const photoHeight = photoWidth;
     const photoX = pageWidth - margin - photoWidth;
 
@@ -142,18 +142,18 @@ export async function POST(request: NextRequest) {
     }
 
     // Personal Information Section
+    doc.fontSize(18);
     renderMixedText(translations.personalDetails, margin, yPos, { bold: true });
-    doc.fontSize(14);
-    yPos += 18;
+    yPos += 22;
 
     doc
       .moveTo(margin, yPos)
       .lineTo(margin + availableWidth * 0.6, yPos)
       .stroke();
-    yPos += 8;
+    yPos += 6;
 
     // Personal details
-    doc.fontSize(10);
+    doc.fontSize(14);
     const labelX = margin;
     const contentX = margin + 120;
 
@@ -178,7 +178,7 @@ export async function POST(request: NextRequest) {
       renderMixedText(`${field.label}:`, labelX, yPos, { bold: true });
       // Use renderMixedText for values that might contain Devanagari
       renderMixedText(field.value, contentX, yPos, {});
-      yPos += 14;
+      yPos += 21; // 14 * 1.5
     });
 
     // Website (clickable)
@@ -191,7 +191,7 @@ export async function POST(request: NextRequest) {
         underline: true,
       });
     doc.fillColor("black");
-    yPos += 14;
+    yPos += 21;
 
     // Instagram (clickable)
     renderMixedText(`${translations.instagram}:`, labelX, yPos, { bold: true });
@@ -203,7 +203,7 @@ export async function POST(request: NextRequest) {
         underline: true,
       });
     doc.fillColor("black");
-    yPos += 14;
+    yPos += 21;
 
     // LinkedIn (clickable)
     renderMixedText(`${translations.linkedin}:`, labelX, yPos, { bold: true });
@@ -218,44 +218,44 @@ export async function POST(request: NextRequest) {
     yPos += 30;
 
     // Education Section
-    doc.fontSize(14);
+    doc.fontSize(18);
     renderMixedText(translations.educationDetails, margin, yPos, {
       bold: true,
     });
-    yPos += 18;
+    yPos += 22;
     doc
       .moveTo(margin, yPos)
       .lineTo(pageWidth - margin, yPos)
       .stroke();
-    yPos += 8;
+    yPos += 6;
 
-    doc.fontSize(10);
+    doc.fontSize(14);
     renderMixedText(data.education.degree[lang], margin, yPos, {});
-    yPos += 14;
+    yPos += 21;
     const eduText = `${data.education.major[lang]}, ${data.education.minor[lang]}`;
     renderMixedText(eduText, margin, yPos, {});
-    yPos += 30; // Spacing between sections
+    yPos += 30;
 
     // Professional Details Section
-    doc.fontSize(14);
+    doc.fontSize(18);
     renderMixedText(translations.professionalDetails, margin, yPos, {
       bold: true,
     });
-    yPos += 18;
+    yPos += 22;
     doc
       .moveTo(margin, yPos)
       .lineTo(pageWidth - margin, yPos)
       .stroke();
-    yPos += 8;
+    yPos += 6;
 
-    doc.fontSize(10);
+    doc.fontSize(14);
     renderMixedText(
       data.professional.softwareDevelopment.title[lang],
       margin,
       yPos,
       { bold: true },
     );
-    yPos += 14;
+    yPos += 18;
     renderMixedText(
       data.professional.softwareDevelopment.description[lang],
       margin,
@@ -264,12 +264,12 @@ export async function POST(request: NextRequest) {
         width: pageWidth - 2 * margin,
       },
     );
-    yPos += 40;
+    yPos += 60;
 
     renderMixedText(data.professional.stockMarket.title[lang], margin, yPos, {
       bold: true,
     });
-    yPos += 14;
+    yPos += 18;
     renderMixedText(
       data.professional.stockMarket.description[lang],
       margin,
@@ -278,35 +278,35 @@ export async function POST(request: NextRequest) {
         width: pageWidth - 2 * margin,
       },
     );
-    yPos += 40; // Spacing between sections
+    yPos += 60;
 
     // Interests & Hobbies Section
-    doc.fontSize(14);
+    doc.fontSize(18);
     renderMixedText(translations.interests, margin, yPos, { bold: true });
-    yPos += 18;
+    yPos += 22;
     doc
       .moveTo(margin, yPos)
       .lineTo(pageWidth - margin, yPos)
       .stroke();
-    yPos += 8;
+    yPos += 6;
 
-    doc.fontSize(10);
+    doc.fontSize(14);
     renderMixedText(data.lifestyle.interests[lang], margin, yPos, {
       width: pageWidth - 2 * margin,
     });
-    yPos += 50; // Spacing between sections
+    yPos += 80;
 
     // Family Background Section
-    doc.fontSize(14);
+    doc.fontSize(18);
     renderMixedText(translations.familyDetails, margin, yPos, { bold: true });
-    yPos += 18;
+    yPos += 22;
     doc
       .moveTo(margin, yPos)
       .lineTo(pageWidth - margin, yPos)
       .stroke();
-    yPos += 8;
+    yPos += 6;
 
-    doc.fontSize(10);
+    doc.fontSize(14);
 
     const familyLabelX = margin;
     const familyContentX = margin + 55;
@@ -318,7 +318,7 @@ export async function POST(request: NextRequest) {
     renderMixedText(fatherText, familyContentX, yPos, {
       width: pageWidth - familyContentX - margin,
     });
-    yPos += 16;
+    yPos += 22; // 16 * 1.5
 
     const motherText = `${data.family.mother.name[lang]} - ${data.family.mother.occupation[lang]}`;
     renderMixedText(`${translations.mother}:`, familyLabelX, yPos, {
@@ -327,7 +327,7 @@ export async function POST(request: NextRequest) {
     renderMixedText(motherText, familyContentX, yPos, {
       width: pageWidth - familyContentX - margin,
     });
-    yPos += 16;
+    yPos += 22; // 16 * 1.5
 
     const sisterText = `${data.family.sister.name[lang]} (${data.family.sister.status[lang]})`;
     renderMixedText(`${translations.sister}:`, familyLabelX, yPos, {
