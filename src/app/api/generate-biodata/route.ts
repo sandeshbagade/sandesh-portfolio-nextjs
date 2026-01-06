@@ -121,7 +121,7 @@ export async function POST(request: NextRequest) {
     let yPos = margin;
 
     const availableWidth = pageWidth - 3 * margin;
-    const photoWidth = availableWidth * 0.4 * 1.35;
+    const photoWidth = availableWidth * 0.4 * 1.45;
     const photoHeight = photoWidth;
     const photoX = pageWidth - margin - photoWidth;
 
@@ -168,6 +168,7 @@ export async function POST(request: NextRequest) {
       { label: translations.dateOfBirth, value: data.personal.dateOfBirth },
       { label: translations.height, value: data.personal.height.feet },
       { label: translations.weight, value: data.personal.weight },
+      { label: translations.bloodGroup, value: data.personal.bloodGroup },
       { label: translations.complexion, value: data.personal.complexion[lang] },
       { label: translations.caste, value: data.personal.caste[lang] },
       { label: translations.location, value: data.personal.location[lang] },
@@ -215,7 +216,7 @@ export async function POST(request: NextRequest) {
         underline: true,
       });
     doc.fillColor("black");
-    yPos += 30;
+    yPos += 25;
 
     // Education Section
     doc.fontSize(18);
@@ -234,7 +235,7 @@ export async function POST(request: NextRequest) {
     yPos += 21;
     const eduText = `${data.education.major[lang]}, ${data.education.minor[lang]}`;
     renderMixedText(eduText, margin, yPos, {});
-    yPos += 30;
+    yPos += 25;
 
     // Professional Details Section
     doc.fontSize(18);
@@ -264,7 +265,7 @@ export async function POST(request: NextRequest) {
         width: pageWidth - 2 * margin,
       },
     );
-    yPos += 60;
+    yPos += 35;
 
     renderMixedText(data.professional.stockMarket.title[lang], margin, yPos, {
       bold: true,
@@ -278,7 +279,7 @@ export async function POST(request: NextRequest) {
         width: pageWidth - 2 * margin,
       },
     );
-    yPos += 60;
+    yPos += 25;
 
     // Interests & Hobbies Section
     doc.fontSize(18);
@@ -294,7 +295,7 @@ export async function POST(request: NextRequest) {
     renderMixedText(data.lifestyle.interests[lang], margin, yPos, {
       width: pageWidth - 2 * margin,
     });
-    yPos += 80;
+    yPos += 40;
 
     // Family Background Section
     doc.fontSize(18);
@@ -309,7 +310,7 @@ export async function POST(request: NextRequest) {
     doc.fontSize(14);
 
     const familyLabelX = margin;
-    const familyContentX = margin + 55;
+    const familyContentX = margin + 120;
 
     const fatherText = `${data.family.father.name[lang]} - ${data.family.father.occupation[lang]} (${data.family.father.contact})`;
     renderMixedText(`${translations.father}:`, familyLabelX, yPos, {
@@ -317,8 +318,9 @@ export async function POST(request: NextRequest) {
     });
     renderMixedText(fatherText, familyContentX, yPos, {
       width: pageWidth - familyContentX - margin,
+      lineBreak: false,
     });
-    yPos += 22; // 16 * 1.5
+    yPos += 21;
 
     const motherText = `${data.family.mother.name[lang]} - ${data.family.mother.occupation[lang]}`;
     renderMixedText(`${translations.mother}:`, familyLabelX, yPos, {
@@ -326,8 +328,9 @@ export async function POST(request: NextRequest) {
     });
     renderMixedText(motherText, familyContentX, yPos, {
       width: pageWidth - familyContentX - margin,
+      lineBreak: false,
     });
-    yPos += 22; // 16 * 1.5
+    yPos += 21;
 
     const sisterText = `${data.family.sister.name[lang]} (${data.family.sister.status[lang]})`;
     renderMixedText(`${translations.sister}:`, familyLabelX, yPos, {
@@ -335,7 +338,67 @@ export async function POST(request: NextRequest) {
     });
     renderMixedText(sisterText, familyContentX, yPos, {
       width: pageWidth - familyContentX - margin,
+      lineBreak: false,
     });
+    yPos += 25;
+
+    // Expectations Section
+    doc.fontSize(18);
+    renderMixedText(translations.expectationsDetails, margin, yPos, {
+      bold: true,
+    });
+    yPos += 22;
+    doc
+      .moveTo(margin, yPos)
+      .lineTo(pageWidth - margin, yPos)
+      .stroke();
+    yPos += 6;
+
+    doc.fontSize(14);
+
+    const expectationLabelX = margin;
+    const expectationContentX = margin + 120;
+
+    renderMixedText(`${translations.education}:`, expectationLabelX, yPos, {
+      bold: true,
+    });
+    renderMixedText(
+      data.expectations.education[lang],
+      expectationContentX,
+      yPos,
+      {
+        width: pageWidth - expectationContentX - margin,
+        lineBreak: false,
+      },
+    );
+    yPos += 21;
+
+    renderMixedText(`${translations.ageRange}:`, expectationLabelX, yPos, {
+      bold: true,
+    });
+    renderMixedText(data.expectations.age[lang], expectationContentX, yPos, {
+      width: pageWidth - expectationContentX - margin,
+      lineBreak: false,
+    });
+    yPos += 21;
+
+    renderMixedText(
+      `${translations.foodPreference}:`,
+      expectationLabelX,
+      yPos,
+      {
+        bold: true,
+      },
+    );
+    renderMixedText(
+      data.expectations.foodPreference[lang],
+      expectationContentX,
+      yPos,
+      {
+        width: pageWidth - expectationContentX - margin,
+        lineBreak: false,
+      },
+    );
 
     doc.end();
 

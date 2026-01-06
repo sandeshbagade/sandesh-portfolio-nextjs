@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-import Image from 'next/image';
-import { HiArrowNarrowRight } from 'react-icons/hi';
-import { useLanguage } from '@/lib/LanguageContext';
+import { motion } from "framer-motion";
+import Link from "next/link";
+import Image from "next/image";
+import { HiArrowNarrowRight } from "react-icons/hi";
+import { useLanguage } from "@/lib/LanguageContext";
 
 const Hero = () => {
   const { t } = useLanguage();
@@ -23,7 +23,8 @@ const Hero = () => {
             transition={{ duration: 0.5 }}
           >
             <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-3 md:mb-4 leading-tight'>
-              {t.hero.greeting} <span className='text-blue-600'>{t.hero.name}</span> 👋
+              {t.hero.greeting}{" "}
+              <span className='text-blue-600'>{t.hero.name}</span> 👋
             </h1>
             <p className='text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-4 md:mb-6 leading-relaxed max-w-lg'>
               {t.hero.intro}
@@ -87,12 +88,12 @@ const Hero = () => {
                 unoptimized={true}
                 onError={(e) => {
                   // If image fails to load, show initials instead
-                  e.currentTarget.style.display = 'none';
+                  e.currentTarget.style.display = "none";
                   const parent = e.currentTarget.parentElement;
                   if (parent) {
-                    const fallback = document.createElement('div');
-                    fallback.className = 'text-blue-600 text-6xl font-bold';
-                    fallback.innerText = 'SB';
+                    const fallback = document.createElement("div");
+                    fallback.className = "text-blue-600 text-6xl font-bold";
+                    fallback.innerText = "SB";
                     parent.appendChild(fallback);
                   }
                 }}

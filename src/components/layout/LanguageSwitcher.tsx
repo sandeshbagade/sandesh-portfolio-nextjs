@@ -1,14 +1,14 @@
-'use client';
+"use client";
 
-import { useLanguage } from '@/lib/LanguageContext';
-import { Language } from '@/lib/translations';
-import { HiGlobeAlt } from 'react-icons/hi';
-import { useState, useRef, useEffect } from 'react';
+import { useLanguage } from "@/lib/LanguageContext";
+import { Language } from "@/lib/translations";
+import { HiGlobeAlt } from "react-icons/hi";
+import { useState, useRef, useEffect } from "react";
 
 const languages = [
-  { code: 'en' as Language, name: 'English', nativeName: 'English' },
-  { code: 'hi' as Language, name: 'Hindi', nativeName: 'हिंदी' },
-  { code: 'mr' as Language, name: 'Marathi', nativeName: 'मराठी' },
+  { code: "en" as Language, name: "English", nativeName: "English" },
+  { code: "hi" as Language, name: "Hindi", nativeName: "हिंदी" },
+  { code: "mr" as Language, name: "Marathi", nativeName: "मराठी" },
 ];
 
 export function LanguageSwitcher() {
@@ -20,13 +20,16 @@ export function LanguageSwitcher() {
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setIsOpen(false);
       }
     }
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   return (
@@ -53,8 +56,8 @@ export function LanguageSwitcher() {
               }}
               className={`w-full text-left px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors ${
                 language === lang.code
-                  ? 'bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 font-medium'
-                  : 'text-gray-700 dark:text-gray-300'
+                  ? "bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 font-medium"
+                  : "text-gray-700 dark:text-gray-300"
               }`}
             >
               {lang.nativeName}
@@ -65,6 +68,3 @@ export function LanguageSwitcher() {
     </div>
   );
 }
-
-
-

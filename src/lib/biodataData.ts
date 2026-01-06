@@ -14,6 +14,7 @@ export const biodataInfo = {
       cm: "168 cm",
     },
     weight: "65 kg",
+    bloodGroup: "A+",
     complexion: {
       en: "Wheatish",
       hi: "गेहुंआ",
@@ -55,9 +56,9 @@ export const biodataInfo = {
         mr: "छगन बगाडे",
       },
       occupation: {
-        en: "Retired Electrician (Government Job)",
-        hi: "सेवानिवृत्त इलेक्ट्रीशियन (सरकारी नौकरी)",
-        mr: "निवृत्त इलेक्ट्रिशियन (शासकीय नोकरी)",
+        en: "Retired Govt. Employee",
+        hi: "सेवानिवृत्त सरकारी कर्मचारी",
+        mr: "निवृत्त शासकीय कर्मचारी",
       },
       contact: "+91 9822862712",
     },
@@ -111,9 +112,9 @@ export const biodataInfo = {
         mr: "फ्रीलान्स सॉफ्टवेअर डेव्हलपर (घरून काम)",
       },
       description: {
-        en: "Specializes in building custom websites and mobile applications for clients across USA, Canada, and Singapore. Works independently on full-stack development projects using modern technologies. Has professional experience with international companies in software development.",
-        hi: "USA, Canada और Singapore में ग्राहकों के लिए कस्टम वेबसाइट और मोबाइल एप्लिकेशन बनाने में विशेषज्ञता। आधुनिक तकनीकों का उपयोग करके फुल-स्टैक विकास परियोजनाओं पर स्वतंत्र रूप से काम करता है। अंतरराष्ट्रीय कंपनियों के साथ सॉफ्टवेयर विकास में पेशेवर अनुभव है।",
-        mr: "USA, Canada आणि Singapore मधील क्लायंटसाठी कस्टम वेबसाइट्स आणि मोबाइल अॅप्लिकेशन तयार करण्यात तज्ञ. आधुनिक तंत्रज्ञानाचा वापर करून फुल-स्टॅक डेव्हलपमेंट प्रोजेक्ट्सवर स्वतंत्रपणे काम करतो. आंतरराष्ट्रीय कंपन्यांसोबत सॉफ्टवेअर डेव्हलपमेंटमध्ये व्यावसायिक अनुभव आहे.",
+        en: "Specializes in building custom websites and mobile applications for clients across USA, Canada, and Singapore.",
+        hi: "USA, Canada और Singapore में ग्राहकों के लिए कस्टम वेबसाइट और मोबाइल एप्लिकेशन बनाने में विशेषज्ञता।",
+        mr: "USA, Canada आणि Singapore मधील क्लायंटसाठी कस्टम वेबसाइट्स आणि मोबाइल अॅप्लिकेशन तयार करण्यात तज्ञ.",
       },
     },
     stockMarket: {
@@ -123,17 +124,39 @@ export const biodataInfo = {
         mr: "शेअर मार्केट गुंतवणूकदार",
       },
       description: {
-        en: "Conducts equity research and invests in individual stocks based on fundamental analysis. Analyzes company financials, market trends, and economic indicators to make informed investment decisions.",
-        hi: "मौलिक विश्लेषण के आधार पर इक्विटी रिसर्च करता है और व्यक्तिगत शेयरों में निवेश करता है। सूचित निवेश निर्णय लेने के लिए कंपनी की वित्तीय स्थिति, बाजार के रुझान और आर्थिक संकेतकों का विश्लेषण करता है।",
-        mr: "मूलभूत विश्लेषणावर आधारित इक्विटी रिसर्च करतो आणि वैयक्तिक शेअर्समध्ये गुंतवणूक करतो. माहितीपूर्ण गुंतवणूक निर्णय घेण्यासाठी कंपनीच्या आर्थिक स्थितीचे, बाजार ट्रेंड्स आणि आर्थिक निर्देशकांचे विश्लेषण करतो.",
+        en: "Conducts equity research and invests in individual stocks.",
+        hi: "इक्विटी रिसर्च करता है और व्यक्तिगत शेयरों में निवेश करता है।",
+        mr: "इक्विटी रिसर्च करतो आणि वैयक्तिक शेअर्समध्ये गुंतवणूक करतो.",
       },
     },
   },
   lifestyle: {
     interests: {
-      en: "Practices meditation and Vipassana for mindful living. Passionate about fitness with regular gym routine and cooks own meals focusing on nutrition. Keen interest in geopolitics and global affairs. Enjoys pickleball for staying active. Loves traveling to explore new places and cultures. Plays flute and enjoys photography.",
-      hi: "सचेतन जीवन के लिए ध्यान और विपश्यना का अभ्यास करता है। पोषण पर ध्यान केंद्रित करते हुए नियमित जिम दिनचर्या और अपना भोजन बनाने के साथ फिटनेस के बारे में भावुक। भूराजनीति और वैश्विक मामलों में गहरी रुचि। सक्रिय रहने के लिए पिकलबॉल खेलना पसंद है। नई जगहों और संस्कृतियों की खोज के लिए यात्रा करना पसंद है। बांसुरी बजाते हैं और फोटोग्राफी पसंद है।",
-      mr: "जागरूक जीवनासाठी ध्यान आणि विपश्यनाचा सराव करतो. पोषणावर लक्ष केंद्रित करून नियमित जिम दिनचर्या आणि स्वतःचे जेवण शिजवण्यासह फिटनेसबद्दल उत्कट. भूराजनीति आणि जागतिक घडामोडींमध्ये तीव्र स्वारस्य. सक्रिय राहण्यासाठी पिकलबॉल खेळायला आवडते. नवीन ठिकाणे आणि संस्कृती एक्सप्लोर करण्यासाठी प्रवास करायला आवडते. बासरी वाजवतो आणि फोटोग्राफी आवडते.",
+      en: "Practices Vipassana meditation. Goes to gym regularly and likes to cook nutrition-focused meals. Enjoys pickleball and traveling.",
+      hi: "विपश्यना ध्यान का अभ्यास। नियमित रूप से जिम जाते हैं और पोषण केंद्रित भोजन बनाना पसंद करते हैं। पिकलबॉल और यात्रा पसंद है।",
+      mr: "विपश्यना ध्यान. नियमितपणे जिम जातो आणि पोषण केंद्रित जेवण शिजवायला आवडते. पिकलबॉल आणि प्रवास आवडतो.",
+    },
+  },
+  expectations: {
+    title: {
+      en: "Expectations",
+      hi: "अपेक्षाएं",
+      mr: "अपेक्षा",
+    },
+    education: {
+      en: "Pursuing or Completed Graduation",
+      hi: "स्नातक कर रही हो या पूर्ण कर चुकी हो",
+      mr: "पदवी करत असलेली किंवा पूर्ण केलेली",
+    },
+    age: {
+      en: "21 to 26 years",
+      hi: "21 से 26 वर्ष",
+      mr: "21 ते 26 वर्षे",
+    },
+    foodPreference: {
+      en: "Non-Vegetarian",
+      hi: "मांसाहारी",
+      mr: "मांसाहारी",
     },
   },
 };

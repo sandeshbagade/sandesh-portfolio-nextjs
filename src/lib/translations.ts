@@ -4,7 +4,8 @@ export const translations = {
     hero: {
       greeting: "Hello, I'm",
       name: "Sandesh",
-      intro: "Full Stack Web Developer and Stock Market Investor from Pune. I'm passionate about technology, markets, mindful living, and maintaining a healthy lifestyle.",
+      intro:
+        "Full Stack Web Developer and Stock Market Investor from Pune. I'm passionate about technology, markets, mindful living, and maintaining a healthy lifestyle.",
       location: "Based in Pune, working with clients from around the world.",
       badges: {
         developer: "💻 Web Developer",
@@ -27,8 +28,10 @@ export const translations = {
         dob: "Date of Birth",
         languages: "Languages",
         professionalBackground: "Professional Background",
-        backgroundText1: "I'm a Full Stack Web Developer with a background in Computer Science from NIT Trichy. My journey in software development has been focused on creating effective web solutions using modern technologies.",
-        backgroundText2: "Currently working as a Freelance Web Developer, I collaborate with clients from US, Canada, and Singapore, building web applications using JavaScript, React, Next.js, Python, and Node.js.",
+        backgroundText1:
+          "I'm a Full Stack Web Developer with a background in Computer Science from NIT Trichy. My journey in software development has been focused on creating effective web solutions using modern technologies.",
+        backgroundText2:
+          "Currently working as a Freelance Web Developer, I collaborate with clients from US, Canada, and Singapore, building web applications using JavaScript, React, Next.js, Python, and Node.js.",
         professionalInterestsTitle: "Professional Interests",
         hobbiesTitle: "Interests & Hobbies",
       },
@@ -41,22 +44,26 @@ export const translations = {
       },
       professionalInterests: {
         title: "Professional Interests",
-        description: "Beyond web development, these areas keep me intellectually engaged and informed.",
+        description:
+          "Beyond web development, these areas keep me intellectually engaged and informed.",
       },
       hobbies: {
         title: "Interests & Hobbies",
-        description: "Beyond work, these are the activities and interests that I'm passionate about.",
+        description:
+          "Beyond work, these are the activities and interests that I'm passionate about.",
       },
       instagram: {
         title: "Instagram 📸",
-        description: "Follow me on Instagram for updates on my travels, activities, and interests.",
+        description:
+          "Follow me on Instagram for updates on my travels, activities, and interests.",
         cta: "Connect with me on Instagram to see my photography, travel experiences, and daily activities.",
         button: "Visit Instagram",
         note: "Click to visit my Instagram profile",
       },
       experience: {
         title: "Work Experience 💼",
-        description: "Professional experience in web development and software engineering.",
+        description:
+          "Professional experience in web development and software engineering.",
       },
       skills: {
         title: "Technical Skills 🛠️",
@@ -68,7 +75,8 @@ export const translations = {
       },
       contact: {
         title: "Contact Information 💬",
-        description: "Feel free to reach out for professional opportunities or networking.",
+        description:
+          "Feel free to reach out for professional opportunities or networking.",
         email: "Email",
         phone: "Phone",
         location: "Location",
@@ -80,16 +88,24 @@ export const translations = {
     // Biodata Section
     biodata: {
       downloadButton: "Download Biodata",
+      passwordTitle: "Access Required",
+      passwordPrompt: "Please enter the access code to download the biodata:",
+      passwordPlaceholder: "Enter access code",
+      passwordSubmit: "Submit",
+      passwordCancel: "Cancel",
+      passwordError: "Incorrect access code. Please try again.",
       personalDetails: "Personal Information",
       familyDetails: "Family Background",
       educationDetails: "Educational Qualification",
       professionalDetails: "Professional Details",
       lifestyleDetails: "Lifestyle & Interests",
+      expectationsDetails: "Expectations",
       name: "Name",
       dateOfBirth: "Date of Birth",
       age: "Age",
       height: "Height",
       weight: "Weight",
+      bloodGroup: "Blood Group",
       complexion: "Complexion",
       caste: "Caste",
       maritalStatus: "Marital Status",
@@ -112,8 +128,11 @@ export const translations = {
       minor: "Minor",
       years: "years",
       unmarried: "Unmarried",
-      governmentJob: "Government Job",
+      governmentJob: "Govt. Job",
       retired: "Retired",
+      education: "Education",
+      ageRange: "Age",
+      foodPreference: "Food Preference",
       diet: "Diet",
       drinking: "Drinking",
       smoking: "Smoking",
@@ -127,7 +146,8 @@ export const translations = {
     hero: {
       greeting: "नमस्ते, मैं",
       name: "संदेश",
-      intro: "पुणे से फुल स्टैक वेब डेवलपर और शेयर बाजार निवेशक। मैं प्रौद्योगिकी, बाजार, सचेतन जीवन और स्वस्थ जीवनशैली के बारे में भावुक हूं।",
+      intro:
+        "पुणे से फुल स्टैक वेब डेवलपर और शेयर बाजार निवेशक। मैं प्रौद्योगिकी, बाजार, सचेतन जीवन और स्वस्थ जीवनशैली के बारे में भावुक हूं।",
       location: "पुणे में स्थित, दुनिया भर के ग्राहकों के साथ काम करता हूं।",
       badges: {
         developer: "💻 वेब डेवलपर",
@@ -150,8 +170,10 @@ export const translations = {
         dob: "जन्म तिथि",
         languages: "भाषाएं",
         professionalBackground: "व्यावसायिक पृष्ठभूमि",
-        backgroundText1: "मैं NIT Trichy से कंप्यूटर साइंस की पृष्ठभूमि वाला एक फुल स्टैक वेब डेवलपर हूं। सॉफ्टवेयर विकास में मेरी यात्रा आधुनिक तकनीकों का उपयोग करके प्रभावी वेब समाधान बनाने पर केंद्रित रही है।",
-        backgroundText2: "वर्तमान में फ्रीलांस वेब डेवलपर के रूप में काम करते हुए, मैं US, Canada और Singapore के ग्राहकों के साथ सहयोग करता हूं, JavaScript, React, Next.js, Python और Node.js का उपयोग करके वेब एप्लिकेशन बनाता हूं।",
+        backgroundText1:
+          "मैं NIT Trichy से कंप्यूटर साइंस की पृष्ठभूमि वाला एक फुल स्टैक वेब डेवलपर हूं। सॉफ्टवेयर विकास में मेरी यात्रा आधुनिक तकनीकों का उपयोग करके प्रभावी वेब समाधान बनाने पर केंद्रित रही है।",
+        backgroundText2:
+          "वर्तमान में फ्रीलांस वेब डेवलपर के रूप में काम करते हुए, मैं US, Canada और Singapore के ग्राहकों के साथ सहयोग करता हूं, JavaScript, React, Next.js, Python और Node.js का उपयोग करके वेब एप्लिकेशन बनाता हूं।",
         professionalInterestsTitle: "व्यावसायिक रुचियां",
         hobbiesTitle: "रुचियां और शौक",
       },
@@ -164,15 +186,18 @@ export const translations = {
       },
       professionalInterests: {
         title: "व्यावसायिक रुचियां",
-        description: "वेब विकास के अलावा, ये क्षेत्र मुझे बौद्धिक रूप से व्यस्त और सूचित रखते हैं।",
+        description:
+          "वेब विकास के अलावा, ये क्षेत्र मुझे बौद्धिक रूप से व्यस्त और सूचित रखते हैं।",
       },
       hobbies: {
         title: "रुचियां और शौक",
-        description: "काम के अलावा, ये वे गतिविधियां और रुचियां हैं जिनमें मेरी दिलचस्पी है।",
+        description:
+          "काम के अलावा, ये वे गतिविधियां और रुचियां हैं जिनमें मेरी दिलचस्पी है।",
       },
       instagram: {
         title: "Instagram 📸",
-        description: "मेरी यात्रा, गतिविधियों और रुचियों के अपडेट के लिए Instagram पर फॉलो करें।",
+        description:
+          "मेरी यात्रा, गतिविधियों और रुचियों के अपडेट के लिए Instagram पर फॉलो करें।",
         cta: "मेरी फोटोग्राफी, यात्रा अनुभव और दैनिक गतिविधियों को देखने के लिए Instagram पर जुड़ें।",
         button: "Instagram पर जाएं",
         note: "मेरा Instagram प्रोफाइल देखने के लिए क्लिक करें",
@@ -183,7 +208,8 @@ export const translations = {
       },
       skills: {
         title: "तकनीकी कौशल 🛠️",
-        description: "तकनीकें और उपकरण जिनके साथ मैं पेशेवर रूप से काम करता हूं।",
+        description:
+          "तकनीकें और उपकरण जिनके साथ मैं पेशेवर रूप से काम करता हूं।",
       },
       projects: {
         title: "परियोजनाएं 🚀",
@@ -203,16 +229,25 @@ export const translations = {
     // Biodata Section
     biodata: {
       downloadButton: "बायोडाटा डाउनलोड करें",
+      passwordTitle: "एक्सेस आवश्यक",
+      passwordPrompt:
+        "बायोडाटा डाउनलोड करने के लिए कृपया एक्सेस कोड दर्ज करें:",
+      passwordPlaceholder: "एक्सेस कोड दर्ज करें",
+      passwordSubmit: "जमा करें",
+      passwordCancel: "रद्द करें",
+      passwordError: "गलत एक्सेस कोड। कृपया पुनः प्रयास करें।",
       personalDetails: "व्यक्तिगत जानकारी",
       familyDetails: "पारिवारिक पृष्ठभूमि",
       educationDetails: "शैक्षिक योग्यता",
       professionalDetails: "व्यावसायिक विवरण",
       lifestyleDetails: "जीवनशैली और रुचियां",
+      expectationsDetails: "अपेक्षाएं",
       name: "नाम",
       dateOfBirth: "जन्म तिथि",
       age: "आयु",
       height: "ऊंचाई",
       weight: "वजन",
+      bloodGroup: "रक्त समूह",
       complexion: "रंग",
       caste: "जाति",
       maritalStatus: "वैवाहिक स्थिति",
@@ -237,6 +272,9 @@ export const translations = {
       unmarried: "अविवाहित",
       governmentJob: "सरकारी नौकरी",
       retired: "सेवानिवृत्त",
+      education: "शिक्षा",
+      ageRange: "आयु",
+      foodPreference: "भोजन प्राथमिकता",
       diet: "आहार",
       drinking: "शराब",
       smoking: "धूम्रपान",
@@ -250,7 +288,8 @@ export const translations = {
     hero: {
       greeting: "नमस्कार, मी",
       name: "संदेश",
-      intro: "पुण्यातील फुल स्टॅक वेब डेव्हलपर आणि शेअर मार्केट गुंतवणूकदार। तंत्रज्ञान, बाजार, जागरूक जीवन आणि निरोगी जीवनशैलीबद्दल उत्कट आहे।",
+      intro:
+        "पुण्यातील फुल स्टॅक वेब डेव्हलपर आणि शेअर मार्केट गुंतवणूकदार। तंत्रज्ञान, बाजार, जागरूक जीवन आणि निरोगी जीवनशैलीबद्दल उत्कट आहे।",
       location: "पुण्यात राहतो, जगभरातील क्लायंटसोबत काम करतो।",
       badges: {
         developer: "💻 वेब डेव्हलपर",
@@ -273,8 +312,10 @@ export const translations = {
         dob: "जन्मतारीख",
         languages: "भाषा",
         professionalBackground: "व्यावसायिक पार्श्वभूमी",
-        backgroundText1: "मी NIT Trichy मधून कॉम्प्युटर सायन्सची पार्श्वभूमी असलेला फुल स्टॅक वेब डेव्हलपर आहे. सॉफ्टवेअर डेव्हलपमेंटमधील माझा प्रवास आधुनिक तंत्रज्ञानाचा वापर करून प्रभावी वेब सोल्यूशन्स तयार करण्यावर केंद्रित आहे.",
-        backgroundText2: "सध्या फ्रीलान्स वेब डेव्हलपर म्हणून काम करत आहे, मी US, Canada आणि Singapore च्या क्लायंटसोबत सहकार्य करतो, JavaScript, React, Next.js, Python आणि Node.js वापरून वेब अॅप्लिकेशन तयार करतो.",
+        backgroundText1:
+          "मी NIT Trichy मधून कॉम्प्युटर सायन्सची पार्श्वभूमी असलेला फुल स्टॅक वेब डेव्हलपर आहे. सॉफ्टवेअर डेव्हलपमेंटमधील माझा प्रवास आधुनिक तंत्रज्ञानाचा वापर करून प्रभावी वेब सोल्यूशन्स तयार करण्यावर केंद्रित आहे.",
+        backgroundText2:
+          "सध्या फ्रीलान्स वेब डेव्हलपर म्हणून काम करत आहे, मी US, Canada आणि Singapore च्या क्लायंटसोबत सहकार्य करतो, JavaScript, React, Next.js, Python आणि Node.js वापरून वेब अॅप्लिकेशन तयार करतो.",
         professionalInterestsTitle: "व्यावसायिक रुची",
         hobbiesTitle: "रुची आणि छंद",
       },
@@ -287,26 +328,31 @@ export const translations = {
       },
       professionalInterests: {
         title: "व्यावसायिक रुची",
-        description: "वेब डेव्हलपमेंट व्यतिरिक्त, ही क्षेत्रे मला बौद्धिकदृष्ट्या व्यस्त आणि माहितीपूर्ण ठेवतात।",
+        description:
+          "वेब डेव्हलपमेंट व्यतिरिक्त, ही क्षेत्रे मला बौद्धिकदृष्ट्या व्यस्त आणि माहितीपूर्ण ठेवतात।",
       },
       hobbies: {
         title: "रुची आणि छंद",
-        description: "कामाच्या पलीकडे, या गतिविधी आणि रुची आहेत ज्यात माझी आवड आहे।",
+        description:
+          "कामाच्या पलीकडे, या गतिविधी आणि रुची आहेत ज्यात माझी आवड आहे।",
       },
       instagram: {
         title: "Instagram 📸",
-        description: "माझ्या प्रवास, क्रियाकलाप आणि रुचींच्या अपडेटसाठी Instagram वर फॉलो करा।",
+        description:
+          "माझ्या प्रवास, क्रियाकलाप आणि रुचींच्या अपडेटसाठी Instagram वर फॉलो करा।",
         cta: "माझे फोटोग्राफी, प्रवास अनुभव आणि दैनंदिन क्रियाकलाप पाहण्यासाठी Instagram वर जुडा।",
         button: "Instagram वर जा",
         note: "माझे Instagram प्रोफाइल पाहण्यासाठी क्लिक करा",
       },
       experience: {
         title: "कार्य अनुभव 💼",
-        description: "वेब डेव्हलपमेंट आणि सॉफ्टवेअर इंजिनिअरिंगमध्ये व्यावसायिक अनुभव।",
+        description:
+          "वेब डेव्हलपमेंट आणि सॉफ्टवेअर इंजिनिअरिंगमध्ये व्यावसायिक अनुभव।",
       },
       skills: {
         title: "तांत्रिक कौशल्ये 🛠️",
-        description: "तंत्रज्ञान आणि साधने ज्यांच्यासोबत मी व्यावसायिकरित्या काम करतो।",
+        description:
+          "तंत्रज्ञान आणि साधने ज्यांच्यासोबत मी व्यावसायिकरित्या काम करतो।",
       },
       projects: {
         title: "प्रकल्प 🚀",
@@ -326,16 +372,25 @@ export const translations = {
     // Biodata Section
     biodata: {
       downloadButton: "बायोडाटा डाउनलोड करा",
+      passwordTitle: "प्रवेश आवश्यक",
+      passwordPrompt:
+        "बायोडाटा डाउनलोड करण्यासाठी कृपया प्रवेश कोड प्रविष्ट करा:",
+      passwordPlaceholder: "प्रवेश कोड प्रविष्ट करा",
+      passwordSubmit: "सबमिट करा",
+      passwordCancel: "रद्द करा",
+      passwordError: "चुकीचा प्रवेश कोड. कृपया पुन्हा प्रयत्न करा.",
       personalDetails: "वैयक्तिक माहिती",
       familyDetails: "कौटुंबिक पार्श्वभूमी",
       educationDetails: "शैक्षणिक पात्रता",
       professionalDetails: "व्यावसायिक तपशील",
       lifestyleDetails: "जीवनशैली आणि आवडी",
+      expectationsDetails: "अपेक्षा",
       name: "नाव",
       dateOfBirth: "जन्मतारीख",
       age: "वय",
       height: "उंची",
       weight: "वजन",
+      bloodGroup: "रक्त गट",
       complexion: "रंग",
       caste: "जात",
       maritalStatus: "वैवाहिक स्थिती",
@@ -360,6 +415,9 @@ export const translations = {
       unmarried: "अविवाहित",
       governmentJob: "शासकीय नोकरी",
       retired: "निवृत्त",
+      education: "शिक्षण",
+      ageRange: "वय",
+      foodPreference: "अन्न प्राधान्य",
       diet: "आहार",
       drinking: "मद्यपान",
       smoking: "धूम्रपान",
@@ -372,4 +430,3 @@ export const translations = {
 
 export type Language = keyof typeof translations;
 export type TranslationKey = typeof translations.en;
-

@@ -1,8 +1,35 @@
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope, FaInstagram } from 'react-icons/fa';
-import { personalInfo } from '@/lib/data';
+"use client";
+
+import {
+  FaGithub,
+  FaLinkedin,
+  FaTwitter,
+  FaEnvelope,
+  FaInstagram,
+} from "react-icons/fa";
+import { HiDownload } from "react-icons/hi";
+import { personalInfo } from "@/lib/data";
+import { useLanguage } from "@/lib/LanguageContext";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { t } = useLanguage();
+
+  // Handle biodata download
+  const handleBiodataDownload = () => {
+    if (typeof window !== "undefined") {
+      setTimeout(() => {
+        if ((window as any).generateBiodataPDF) {
+          (window as any).generateBiodataPDF();
+        } else {
+          console.error("Biodata PDF generator not available");
+          alert(
+            "PDF generator is loading. Please wait a moment and try again.",
+          );
+        }
+      }, 100);
+    }
+  };
 
   return (
     <footer className='bg-gray-50 dark:bg-gray-900 py-12 border-t border-gray-200 dark:border-gray-800'>
@@ -14,8 +41,17 @@ const Footer = () => {
               <span className='text-blue-600'>S</span>andesh Bagade
             </h3>
             <p className='text-gray-600 dark:text-gray-400 mb-4 max-w-md'>
-              Freelance Full Stack Web Developer | Pickleball Enthusiast | Flute Player | Photography Lover
+              Freelance Full Stack Web Developer | Pickleball Enthusiast | Flute
+              Player | Photography Lover
             </p>
+            <button
+              onClick={handleBiodataDownload}
+              className='flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors'
+              aria-label='Download Biodata'
+            >
+              <HiDownload className='h-4 w-4' />
+              {t.biodata.downloadButton}
+            </button>
           </div>
 
           {/* Quick Links */}
